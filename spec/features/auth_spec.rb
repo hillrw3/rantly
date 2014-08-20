@@ -25,7 +25,7 @@ feature 'User creation and login' do
     expect(page).to have_content "Login"
     fill_in "Username", with: "Rob"
     fill_in "Password", with: "1234"
-    click_on "Login"
+    click_button "Login"
     expect(page).to have_content "Rob Hill"
   end
 

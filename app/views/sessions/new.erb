@@ -1,0 +1,28 @@
+<div class="white-box sixtywidth">
+
+  <% if flash[:notice] %>
+    <div class="errors">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <br>
+
+  <h2>Login</h2>
+
+  <%= form_for @user, url: sessions_path do |f| %>
+
+    <%= f.label :username %>
+    <br>
+    <%= f.text_field :username %>
+    <br><br>
+    <%= f.label :password %>
+    <br>
+    <%= f.password_field :password %>
+    <br><br>
+
+    <%= f.submit "Login", class: 'green-button' %>
+
+  <% end %>
+
+</div>

@@ -1,6 +1,14 @@
 <div class="white-box sixtywidth">
   <h2>Register</h2>
 
+  <% if @user.errors.present? %>
+    <div class="errors">
+      <% @gif.errors.full_messages.each do |message| %>
+        <p><%= message %></p>
+      <% end %>
+    </div>
+  <% end %>
+
   <%= form_for @user do |f| %>
 
     <%= f.label :username %>
