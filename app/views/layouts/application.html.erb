@@ -16,7 +16,11 @@
       <li><%= button_to "Join", '/users/new', method: :get, class: 'float-right green-button white-text' %></li>
     </div>
     <div>
-      <li><%= link_to "Login", new_session_path, class: 'float-right white-text', name: "Join" %></li>
+      <% if session[:user_id] %>
+        <li><%= link_to "Logout", signout_path, class: 'float-right white-text'%></li>
+      <% else %>
+        <li><%= link_to "Login", new_session_path, class: 'float-right white-text'%></li>
+      <% end %>
     </div>
   </ul>
 </nav>
