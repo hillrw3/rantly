@@ -6,21 +6,30 @@
 * {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   box-sizing: border-box;
+  background: gray;
 }
 
+body {
+  margin: 0;
+  height: 100%;
+}
 
 .centered-text {
   text-align: center;
 }
 
-h1
-{
+h1 {
   font-size: 3.5em;
 }
 
 .half-height {
   height: 300px;
   width: 100%;
+  background: white;
+
+  * {
+    background: white;
+  }
 }
 
 .half-height-gray {
@@ -42,13 +51,15 @@ h1
 .sixtywidth {
   width: 60%;
   margin: auto;
-   p {
-     position: relative;
-     margin-left: 20%;
-   }
+  p {
+    display: flex;
+    position: relative;
+    margin-left: 20%;
+  }
 
   img {
-    position: absolute;
+    //    position: absolute;
+    display: flex;
   }
 }
 
@@ -65,9 +76,9 @@ h1
   font-size: 1em;
 }
 
-nav{
+nav {
   height: 60px;
-  background: gray;
+  background: #302e2e;
 
   ul {
     list-style-type: none;
@@ -78,6 +89,27 @@ nav{
 
     }
   }
+
+  a {
+    background: #302e2e;
+  }
 }
 
+.white-box * {
+  margin: auto;
+  background: white;
+
+  button {
+    background: limegreen;
+    width: 100%;
+  }
+}
+
+.green-box {
+  height: 50px;
+  background: limegreen;
+  color: white;
+  text-align: center;
+
+}
 
