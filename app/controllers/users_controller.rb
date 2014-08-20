@@ -6,11 +6,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(username: params[:user][:username],
-                    password: params[:user][:password],
-                    first_name: params[:user][:first_name],
-                    last_name: params[:user][:last_name],
-                    bio: params[:user][:bio],
-                    rant_frequency: params[:user][:rant_frequency]
+                     password: params[:user][:password],
+                     first_name: params[:user][:first_name],
+                     last_name: params[:user][:last_name],
+                     bio: params[:user][:bio],
+                     rant_frequency: params[:user][:rant_frequency]
     )
 
     if @user.save
@@ -18,6 +18,28 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def edit
+    @user = User.find(session[:user_id])
+  end
+
+  def update
+    @user = User.find(session[:user_id])
+    @user.update(username: params[:user][:username],
+                 password: params[:user][:password],
+                 first_name: params[:user][:first_name],
+                 last_name: params[:user][:last_name],
+                 bio: params[:user][:bio],
+                 rant_frequency: params[:user][:rant_frequency]
+    )
+
+    if @user.save
+      flash[:notice] = "Your info has been updated!"
+      redirect_to rants_path
+    else
+      render :edit
     end
   end
 

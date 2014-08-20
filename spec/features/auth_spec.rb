@@ -3,12 +3,7 @@ require 'capybara/rails'
 
 feature 'User creation and login' do
 
-  scenario "User sees splash page when not logged in" do
-    visit '/'
-    expect(page).to have_content("Rantly")
-  end
-
-  scenario "User can join and login" do
+  def sign_in
     visit '/'
     click_button "Join"
     expect(page).to have_content("Register")
@@ -26,7 +21,16 @@ feature 'User creation and login' do
     fill_in "Username", with: "Rob"
     fill_in "Password", with: "1234"
     click_button "Login"
-    expect(page).to have_content "Rob Hill"
+    expect(page).to have_content "ROB HILL"
+  end
+
+  scenario "User sees splash page when not logged in" do
+    visit '/'
+    expect(page).to have_content("Rantly")
+  end
+
+  scenario "User can join and login" do
+    sign_in
   end
 
 end
