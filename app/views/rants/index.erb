@@ -7,8 +7,14 @@
 <div class="white-text quarterwidth centered-text">
   <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
   <br><br>
-  <%= link_to "#{@user.first_name.upcase} #{@user.last_name.upcase}", edit_user_path(id: @user.id) %>
+  <%= link_to "#{@user.first_name.upcase} #{@user.last_name.upcase}", edit_user_path(id: @user.id), class: 'user-link white-text' %>
 
-
+  <%= form_for @rant, url: new_rant_path do |f| %>
+    <%= f.label :subject, "A rant about:" %>
+    <%= f.text_field :subject %>
+    <%= f.label :rant %>
+    <%= f.text_area :rant %>
+    <%= f.submit "RANT" %>
+  <% end %>
 
 </div>

@@ -123,3 +123,12 @@ nav {
   background: red;
   color: white;
 }
+
+.user-link {
+  text-decoration: none;
+
+  &:hover {
+    color: limegreen;
+  }
+
+}
