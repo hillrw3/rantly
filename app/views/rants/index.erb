@@ -9,7 +9,7 @@
   <br><br>
   <%= link_to "#{@user.first_name.upcase} #{@user.last_name.upcase}", edit_user_path(id: @user.id), class: 'user-link white-text' %>
 
-  <%= form_for @rant, url: new_rant_path do |f| %>
+  <%= form_for @rant, url: rants_path do |f| %>
     <%= f.label :subject, "A rant about:" %>
     <%= f.text_field :subject %>
     <%= f.label :rant %>

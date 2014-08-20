@@ -27,9 +27,9 @@ feature "Rants" do
   scenario "user can post a rant" do
     sign_in
     fill_in "A rant about:", with: "Pugs"
-    fill_in "Rant:r", with: "Lorem ipsum dolor sit amet, iusto adipisci vituperatoribus eos eu, ei cum vero timeam denique, vis no facer laudem vidisse. Has eu purto minim ludus, ei eos utroque theophrastus. Luptatum invidunt imperdiet pro no, sed eu putent aliquip molestie. Usu ex libris labores impedit, pri id placerat inimicus imperdie"
+    fill_in "Rant", with: "Lorem ipsum dolor sit amet, iusto adipisci"
     click_button "RANT"
-    expect(page).to have_content "Feel better? Rant posted"
+    expect(page).to have_content "Feel better? Rant posted."
   end
 
 
