@@ -59,15 +59,23 @@ h1 {
   }
 
   img {
-    //    position: absolute;
     display: flex;
   }
 }
 
 .quarterwidth {
-  width: 25%;
-  height: 100%;
+  width: 25vw;
+  height: 100vh;
   float: left;
+
+  input[type=text], textarea {
+    background: white;
+  }
+}
+
+.three-quarter-width {
+  width: 75vw;
+  height: 100vh;
 }
 
 .float-left {
@@ -131,4 +139,22 @@ nav {
     color: limegreen;
   }
 
+}
+
+.white-background {
+  background: white;
+
+  * {
+    background: white;
+  }
+}
+
+.my-rants {
+  p {
+    margin-bottom: 0;
+  }
+
+  hr {
+    margin-top: 5vh;
+  }
 }

@@ -8,13 +8,29 @@
   <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
   <br><br>
   <%= link_to "#{@user.first_name.upcase} #{@user.last_name.upcase}", edit_user_path(id: @user.id), class: 'user-link white-text' %>
-
+  <br><br>
   <%= form_for @rant, url: rants_path do |f| %>
     <%= f.label :subject, "A rant about:" %>
+    <br>
     <%= f.text_field :subject %>
+    <br><br>
     <%= f.label :rant %>
+    <br>
     <%= f.text_area :rant %>
+    <br><br>
     <%= f.submit "RANT" %>
   <% end %>
 
+</div>
+
+<div class="three-quarter-width white-background float-right centered-text">
+  <h2>My Rants</h2>
+  <% @my_rants.each do |rant| %>
+    <div class="my-rants sixtywidth">
+      
+      <p><%= rant.rant %></p>
+      <%= link_to "Delete", rant_path(id: rant.id), method: :delete, class: 'float-right' %>
+      <hr width="60%">
+    </div>
+  <% end %>
 </div>
