@@ -11,7 +11,7 @@
 
 body {
   margin: 0;
-  height: 100%;
+  min-height: 100%;
 }
 
 .centered-text {
@@ -43,6 +43,7 @@ h1 {
   width: auto;
   margin: auto;
   max-width: 150px;
+  margin-top: 3vh;
 }
 
 .white-text {
@@ -70,6 +71,11 @@ h1 {
 
   input[type=text], textarea {
     background: white;
+    width: 20vw;
+  }
+
+  textarea {
+    height: 40vh;
   }
 }
 
@@ -91,22 +97,42 @@ h1 {
   font-size: 1em;
 }
 
+.big-button {
+  width: 20vw;
+  height: 6vh;
+  font-size: 1.5em;
+}
+
 nav {
-  height: 60px;
-  background: #302e2e;
+  height: 12vh;
+  background: #333333;
+  vertical-align: middle;
+
+  * {
+    background: #333333;
+  }
 
   ul {
     list-style-type: none;
+    margin: 0;
+    height: 12vh;
 
-    div {
-      display: inline;
+    * {
       vertical-align: middle;
-
     }
-  }
 
-  a {
-    background: #302e2e;
+    li {
+      display: inline;
+
+      a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+          color: limegreen;
+        }
+      }
+    }
   }
 }
 

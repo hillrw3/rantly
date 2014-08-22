@@ -18,7 +18,7 @@
     <br>
     <%= f.text_area :rant %>
     <br><br>
-    <%= f.submit "RANT" %>
+    <%= f.submit "RANT", class: 'green-button big-button' %>
   <% end %>
 
 </div>
@@ -27,7 +27,7 @@
   <h2>My Rants</h2>
   <% @my_rants.each do |rant| %>
     <div class="my-rants sixtywidth">
-      
+
       <p><%= rant.rant %></p>
       <%= link_to "Delete", rant_path(id: rant.id), method: :delete, class: 'float-right' %>
       <hr width="60%">
