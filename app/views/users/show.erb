@@ -1,0 +1,8 @@
+<h1><%= @user.username %></h1>
+<hr width="95%">
+<p><%= @user.bio %></p>
+<hr/>
+<% @user.rants.each do |rant| %>
+  <h3><%= rant.subject %></h3>
+  <p><%= rant.rant %></p>
+<% end %>
