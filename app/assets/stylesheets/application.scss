@@ -204,3 +204,10 @@ nav {
   width: 30%;
   display: inline-block;
 }
+
+.rant-text {
+  text-decoration: none;
+  color: black;
+
+  &:hover { font-weight: bold; }
+}

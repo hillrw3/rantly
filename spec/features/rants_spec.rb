@@ -44,7 +44,7 @@ feature "Rants" do
     expect(page).to have_content "Your rant was deleted."
   end
 
-  scenario "user can views rants by other users and follow them" do
+  scenario "user can views rants by other users and follow users" do
     sign_in
     fill_in "A rant about:", with: "Pugs"
     fill_in "Rant", with: "Lorem ipsum dolor sit amet, iusto adipisci"
@@ -74,6 +74,12 @@ feature "Rants" do
     click_on "Follow"
     click_on "Following"
     expect(page).to have_content "Rob"
+
+    click_on "Dashboard"
+    click_on "Lorem ipsum dolor sit amet, iusto adipisci"
+    expect(page).to have_content "Pugs"
+    expect(page).to have_content "Lorem ipsum dolor sit amet, iusto adipisci"
+
   end
 
 end
