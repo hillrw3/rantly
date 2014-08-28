@@ -5,7 +5,7 @@ feature 'User creation and login' do
 
   def sign_in
     visit '/'
-    click_button "Join"
+    click_on "Join"
     expect(page).to have_content("Register")
     fill_in "Username", with: "Rob"
     fill_in "Password", with: "1234"

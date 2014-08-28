@@ -15,6 +15,10 @@ class RantsController < ApplicationController
     @other_rants = Rant.where.not(user_id: session[:user_id])
   end
 
+  def show
+    @rant = Rant.find(params[:id])
+  end
+
   def create
     @rant = Rant.new(subject: params[:rant][:subject],
                      rant: params[:rant][:rant],
