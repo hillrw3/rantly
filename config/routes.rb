@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :rants
   resources :sessions
   resources :users
+  resources :followers
 end

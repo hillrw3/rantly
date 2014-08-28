@@ -24,10 +24,26 @@
 </div>
 
 <div class="three-quarter-width white-background float-right centered-text">
+  <h2>Latest Rants</h2>
+  <% @other_rants.each do |rant| %>
+    <div class="my-rants sixtywidth">
+      <div class="one-rant">
+        <div class="user-info">
+          <p><%= rant.user.username %></p>
+          <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
+          <%= link_to "Follow", new_follower_path(ranter_id: rant.user.id, ranter_name: rant.user.username)%>
+        </div>
+        <p><%= rant.rant %></p>
+        <hr width="60%">
+      </div>
+    </div>
+  <% end %>
+
+  <hr>
+
   <h2>My Rants</h2>
   <% @my_rants.each do |rant| %>
     <div class="my-rants sixtywidth">
-
       <p><%= rant.rant %></p>
       <%= link_to "Delete", rant_path(id: rant.id), method: :delete, class: 'float-right' %>
       <hr width="60%">

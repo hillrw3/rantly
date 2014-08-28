@@ -5,7 +5,7 @@
 
 $(document).ready(function(){
 
-  setTimeout("$('.flash').hide();", 4000);
+  setTimeout("$('.flash').hide();", 3000);
 
 
 });

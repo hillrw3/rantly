@@ -7,6 +7,7 @@
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   box-sizing: border-box;
   background: gray;
+  overflow: hidden;
 }
 
 body {
@@ -20,10 +21,11 @@ body {
 
 h1 {
   font-size: 3.5em;
+  margin: 0;
 }
 
 .half-height {
-  height: 300px;
+  height: 45vh;
   width: 100%;
   background: white;
 
@@ -33,7 +35,7 @@ h1 {
 }
 
 .half-height-gray {
-  height: 375px;
+  height: 45vh  ;
   width: 100%;
   background: gray;
 }
@@ -53,14 +55,15 @@ h1 {
 .sixtywidth {
   width: 60%;
   margin: auto;
-  p {
-    display: flex;
-    position: relative;
-    margin-left: 20%;
-  }
+  margin-top: 5vh;
 
-  img {
-    display: flex;
+  div {
+    display: inline;
+
+    img {
+      float: left;
+      margin: 0 20px 0 0;
+    }
   }
 }
 
@@ -71,6 +74,7 @@ h1 {
 
   input[type=text], textarea {
     background: white;
+    color: black;
     width: 20vw;
   }
 
@@ -104,7 +108,7 @@ h1 {
 }
 
 nav {
-  height: 12vh;
+  height: 10vh;
   background: #333333;
   vertical-align: middle;
 
@@ -115,7 +119,6 @@ nav {
   ul {
     list-style-type: none;
     margin: 0;
-    height: 12vh;
 
     * {
       vertical-align: middle;
@@ -183,4 +186,16 @@ nav {
   hr {
     margin-top: 5vh;
   }
+}
+
+.user-info {
+  width: 15%;
+  text-align: left;
+
+}
+
+.one-rant {
+  overflow: auto;
+  min-height: 10vh;
+  width: 50px;
 }
