@@ -7,27 +7,54 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<nav>
-  <ul>
-    <li><%= link_to "Rant.ly", root_path, class: 'float-left white-text' %></li>
-    <% if session[:user_id] %>
-      <div class="centered-text">
-        <li><%= link_to "Dashboard  |", rants_path, class: 'white-text' %></li>
-        <li><%= link_to "Following  |", followers_path, class: 'white-text' %></li>
-        <li><%= link_to "Favorites  |", url: '#', class: 'white-text' %></li>
-        <li><%= link_to "Search", url: '#', class: 'white-text' %></li>
-      </div>
-      <li><%= link_to "LOGOUT", signout_path, class: 'float-right white-text green-button' %></li>
-    <% else %>
-      <li><%= button_to "Join", '/users/new', method: :get, class: 'float-right green-button white-text' %></li>
-      <li><%= link_to "Login", new_session_path, class: 'float-right white-text' %></li>
-    <% end %>
-  </ul>
-</nav>
-<body>
-<div class="container">
 
+<% unless session[:user_id] == nil %>
+  <nav>
+    <ul>
+      <li><%= link_to "Rant.ly", root_path, class: 'float-left white-text' %></li>
+      <% if session[:user_id] %>
+        <div class="centered-text">
+          <li><%= link_to "Dashboard  |", rants_path, class: 'white-text' %></li>
+          <li><%= link_to "Following  |", followers_path, class: 'white-text' %></li>
+          <li><%= link_to "Favorites  |", url: '#', class: 'white-text' %></li>
+          <li><%= link_to "Search", url: '#', class: 'white-text' %></li>
+        </div>
+        <li><%= link_to "LOGOUT", signout_path, class: 'float-right white-text green-button' %></li>
+      <% else %>
+        <li><%= button_to "Join", '/users/new', method: :get, class: 'float-right green-button white-text' %></li>
+        <li><%= link_to "Login", new_session_path, class: 'float-right white-text' %></li>
+      <% end %>
+    </ul>
+  </nav>
+  <body>
+  <div class="container">
+    <div class="white-text quarterwidth centered-text">
+      <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
+      <br><br>
+      <% @user = User.find(session[:user_id]) %>
+      <%= link_to "#{@user.first_name.upcase} #{@user.last_name.upcase}", edit_user_path(id: @user.id), class: 'user-link white-text' %>
+      <br><br>
+      <%= form_for Rant.new, url: rants_path do |f| %>
+        <%= f.label :subject, "A rant about:" %>
+        <br>
+        <%= f.text_field :subject %>
+        <br><br>
+        <%= f.label :rant %>
+        <br>
+        <%= f.text_area :rant %>
+        <br><br>
+        <%= f.submit "RANT", class: 'green-button big-button' %>
+      <% end %>
+
+    </div>
+
+    <div class="three-quarter-width white-background float-right centered-text">
+      <%= yield %>
+    </div>
+
+<% else %>
   <%= yield %>
+<% end %>
 
 </div>
 </body>

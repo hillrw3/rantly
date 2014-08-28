@@ -10,7 +10,7 @@ class FollowersController < ApplicationController
       @following << User.find(following_ids.following).username
     else
       following_ids.each do |following|
-        User.where(id: following.following).each { |user| @following << user.username }
+        User.where(id: following.following).each { |user| @following << user }
       end
     end
   end
@@ -19,11 +19,15 @@ class FollowersController < ApplicationController
     @follower = Follower.new(user_id: session[:user_id],
                              following: params[:ranter_id]
     )
-
     if @follower.save
       flash[:notice] = "You're now following #{params[:ranter_name]}"
       redirect_to rants_path
     end
+  end
+
+  def destroy
+    Follower.find_by(user_id: session[:user_id], following: params[:id]).destroy
+    redirect_to :back
   end
 
 end

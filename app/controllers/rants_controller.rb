@@ -1,7 +1,11 @@
 class RantsController < ApplicationController
 
   def splash
-
+    if session[:user_id] == nil
+      render :splash
+    else
+      redirect_to rants_path
+    end
   end
 
   def index
