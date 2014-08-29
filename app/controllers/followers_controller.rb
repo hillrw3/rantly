@@ -16,13 +16,17 @@ class FollowersController < ApplicationController
   end
 
   def new
-    @follower = Follower.new(user_id: session[:user_id],
-                             following: params[:ranter_id]
-    )
-    if @follower.save
-      flash[:notice] = "You're now following #{params[:ranter_name]}"
-      redirect_to :back
+    if Follower.find_by(user_id: session[:user_id], following: params[:ranter_id]) == nil
+      @follower = Follower.new(user_id: session[:user_id],
+                               following: params[:ranter_id]
+      )
+      if @follower.save
+        flash[:notice] = "You're now following #{params[:ranter_name]}"
+      end
+    else
+      flash[:notice] = "You're already following #{params[:ranter_name]}"
     end
+    redirect_to :back
   end
 
   def destroy

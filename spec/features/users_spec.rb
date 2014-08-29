@@ -23,7 +23,7 @@ feature "Users specs" do
     expect(page).to have_content "ROB HILL"
   end
 
-  scenario "user can click on another user's name and see her profile" do
+  scenario "user can click on another user's name to see his profile and can follow him" do
     sign_in
     fill_in "A rant about:", with: "Pugs"
     fill_in "Rant", with: "Lorem ipsum dolor sit amet, iusto adipisci"
@@ -52,6 +52,8 @@ feature "Users specs" do
     expect(page).to have_content "Rob"
     expect(page).to have_content "Just a simple fellow who likes to Rant"
     expect(page).to have_content "Lorem ipsum dolor sit amet, iusto adipisci"
+    click_on "Follow"
+    expect(page).to have_content "You're now following Rob"
   end
 
 

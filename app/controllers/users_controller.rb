@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @following_check = Follower.find_by(user_id: session[:user_id], following: @user.id)
   end
 
   def edit
