@@ -21,7 +21,7 @@ class FollowersController < ApplicationController
     )
     if @follower.save
       flash[:notice] = "You're now following #{params[:ranter_name]}"
-      redirect_to rants_path
+      redirect_to :back
     end
   end
 

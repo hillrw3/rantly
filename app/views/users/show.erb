@@ -1,7 +1,9 @@
 <h1><%= @user.username %></h1>
+<%= link_to "Follow", new_follower_path(ranter_id: @user.id, ranter_name: @user.username), class: "float-right" %>
 <hr width="95%">
 <p><%= @user.bio %></p>
-<hr/>
+
+<br/><br/><br/>
 <% @user.rants.each do |rant| %>
   <h3><%= rant.subject %></h3>
   <p><%= rant.rant %></p>

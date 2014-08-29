@@ -25,6 +25,13 @@
 <% end %>
 </ul>
 </nav>
+
+<% if flash[:notice] %>
+  <div class='green-box flash'>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <% if session[:user_id] %>
   <body>
   <div class="container">
@@ -34,7 +41,7 @@
       <% @user = User.find(session[:user_id]) %>
       <%= link_to "#{@user.first_name.upcase} #{@user.last_name.upcase}", edit_user_path(id: @user.id), class: 'user-link white-text' %>
       <br>
-      <hr/>
+      <hr width="80%"/>
       <br>
       <%= form_for Rant.new, url: rants_path do |f| %>
         <%= f.label :subject, "A rant about:" %>

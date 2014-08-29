@@ -1,31 +1,25 @@
-<% if flash[:notice] %>
-  <div class='green-box flash'>
-    <%= flash[:notice] %>
+<h2>Latest Rants</h2>
+<% @other_rants.each do |rant| %>
+  <div class="my-rants sixtywidth">
+    <div class="one-rant">
+      <div class="user-info">
+        <p><%= link_to rant.user.username, user_path(id: rant.user.id), class: "link-no-dec" %></p>
+        <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
+        <%= link_to "Follow", new_follower_path(ranter_id: rant.user.id, ranter_name: rant.user.username) %>
+      </div>
+      <p><%= link_to rant.rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
+      <hr width="60%">
+    </div>
   </div>
 <% end %>
 
-  <h2>Latest Rants</h2>
-  <% @other_rants.each do |rant| %>
-    <div class="my-rants sixtywidth">
-      <div class="one-rant">
-        <div class="user-info">
-          <p><%= link_to rant.user.username, user_path(id: rant.user.id), class: "link-no-dec" %></p>
-          <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
-          <%= link_to "Follow", new_follower_path(ranter_id: rant.user.id, ranter_name: rant.user.username)%>
-        </div>
-        <p><%= link_to rant.rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
-        <hr width="60%">
-      </div>
-    </div>
-  <% end %>
+<hr>
 
-  <hr>
-
-  <h2>My Rants</h2>
-  <% @my_rants.each do |rant| %>
-    <div class="my-rants sixtywidth">
-      <p><%= rant.rant %></p>
-      <%= link_to "Delete", rant_path(id: rant.id), method: :delete, class: 'float-right' %>
-      <hr width="60%">
-    </div>
-  <% end %>
+<h2>My Rants</h2>
+<% @my_rants.each do |rant| %>
+  <div class="my-rants sixtywidth">
+    <p><%= rant.rant %></p>
+    <%= link_to "Delete", rant_path(id: rant.id), method: :delete, class: 'float-right' %>
+    <hr width="60%">
+  </div>
+<% end %>
