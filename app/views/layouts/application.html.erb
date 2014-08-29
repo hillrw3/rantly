@@ -49,6 +49,15 @@
       <br>
       <hr width="80%"/>
       <br>
+      <% if @rant != nil && @rant.errors.present? %>
+        <p> </p>
+        <div class="errors">
+          <% @rant.errors.full_messages.each do |message| %>
+            <p><%= message %></p>
+          <% end %>
+        </div>
+        <p> </p>
+      <% end %>
       <%= form_for Rant.new, url: rants_path do |f| %>
         <%= f.label :subject, "A rant about:" %>
         <br>
