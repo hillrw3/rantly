@@ -2,11 +2,13 @@
   <h2>Register</h2>
 
   <% if @user.errors.present? %>
+    <p> </p>
     <div class="errors">
-      <% @gif.errors.full_messages.each do |message| %>
+      <% @user.errors.full_messages.each do |message| %>
         <p><%= message %></p>
       <% end %>
     </div>
+    <p> </p>
   <% end %>
 
   <%= form_for @user do |f| %>

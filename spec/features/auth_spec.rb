@@ -8,7 +8,7 @@ feature 'User creation and login' do
     click_on "Join"
     expect(page).to have_content("Register")
     fill_in "Username", with: "Rob"
-    fill_in "Password", with: "1234"
+    fill_in "Password", with: "password"
     fill_in "First name", with: "Rob"
     fill_in "First name", with: "Rob"
     fill_in "Last name", with: "Hill"
@@ -19,7 +19,7 @@ feature 'User creation and login' do
     click_link "Login"
     expect(page).to have_content "Login"
     fill_in "Username", with: "Rob"
-    fill_in "Password", with: "1234"
+    fill_in "Password", with: "password"
     click_button "Login"
     expect(page).to have_content "ROB HILL"
   end
