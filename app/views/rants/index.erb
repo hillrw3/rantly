@@ -6,9 +6,14 @@
         <div class="user-info">
           <p><%= link_to rant.user.username, user_path(id: rant.user.id), class: "link-no-dec" %></p>
           <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
-          <%= link_to "Follow", new_follower_path(ranter_id: rant.user.id, ranter_name: rant.user.username) %>
+          <% if Follower.find_by(user_id: session[:user_id], following: rant.user.id) == nil %>
+            <%= link_to "Follow", new_follower_path(ranter_id: rant.user.id, ranter_name: rant.user.username) %>
+          <% else %>
+            <%= link_to "Unfollow", follower_path(id: rant.user.id), method: :delete %>
+          <% end %>
         </div>
         <h4><%= rant.subject %></h4>
+
         <p><%= link_to rant.rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
         <hr width="60%">
       </div>
@@ -23,6 +28,7 @@
   <% @my_rants.each do |rant| %>
     <div class="my-rants sixtywidth">
       <h4><%= rant.subject %></h4>
+
       <p><%= rant.rant %></p>
       <%= link_to "Delete", rant_path(id: rant.id), method: :delete, class: 'float-right' %>
       <hr width="60%">

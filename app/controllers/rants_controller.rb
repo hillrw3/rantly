@@ -10,7 +10,6 @@ class RantsController < ApplicationController
 
   def index
     @user = User.find(session[:user_id])
-    @rant = Rant.new
     @my_rants = Rant.where(user_id: session[:user_id])
     @other_rants = Rant.where.not(user_id: session[:user_id])
   end
