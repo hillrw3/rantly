@@ -63,4 +63,25 @@ feature 'User creation and login' do
     expect(page).to have_content "Password is too short"
   end
 
+  scenario "user sees error if incorrect login info is provided" do
+    visit '/'
+    click_on "Join"
+    expect(page).to have_content("Register")
+    fill_in "Username", with: "Rob"
+    fill_in "Password", with: "password"
+    fill_in "First name", with: "Rob"
+    fill_in "First name", with: "Rob"
+    fill_in "Last name", with: "Hill"
+    fill_in "Bio", with: "Just a simple fellow who likes to Rant"
+    click_on "Register"
+    expect(page).to have_content "Thanks for registering.  Get to ranting!"
+
+    click_link "Login"
+    expect(page).to have_content "Login"
+    fill_in "Username", with: "Rob"
+    fill_in "Password", with: "pass"
+    click_button "Login"
+    expect(page).to have_content "Login failed"
+  end
+
 end
