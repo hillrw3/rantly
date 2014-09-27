@@ -28,7 +28,7 @@ class RantsController < ApplicationController
       flash[:notice] = "Feel better? Rant posted."
       redirect_to rants_path
     else
-      flash[:notice] = "Yikes.... Unsuccessful Rant :("
+      flash[:error] = "Yikes.... Unsuccessful Rant :("
       render :index
     end
   end

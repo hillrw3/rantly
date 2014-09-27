@@ -10,7 +10,6 @@ feature 'User creation and login' do
     fill_in "Username", with: "Rob"
     fill_in "Password", with: "password"
     fill_in "First name", with: "Rob"
-    fill_in "First name", with: "Rob"
     fill_in "Last name", with: "Hill"
     fill_in "Bio", with: "Just a simple fellow who likes to Rant"
     click_on "Register"

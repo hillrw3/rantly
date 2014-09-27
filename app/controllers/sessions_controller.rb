@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to rants_path
     else
-      flash[:notice] = "Login failed"
+      flash[:error] = "Login failed"
       render :new
     end
   end

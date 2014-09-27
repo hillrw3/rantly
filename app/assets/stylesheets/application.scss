@@ -157,7 +157,9 @@ nav {
 }
 
 .errors {
-  color: red;
+  height: 50px;
+  color: white;
+  background-color: red;
 }
 
 .user-link {
@@ -190,7 +192,6 @@ nav {
 .user-info {
   width: 15%;
   text-align: left;
-
 }
 
 .one-rant {
@@ -209,4 +210,16 @@ nav {
   color: black;
 
   &:hover { font-weight: bold; }
+}
+
+#home-button {
+  margin-top: 3vh;
+}
+
+#logout-button {
+  margin-top: -3vh;
+}
+
+.nav-buttons {
+  margin-top: 2vh;
 }

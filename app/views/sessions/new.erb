@@ -1,16 +1,9 @@
 <div class="white-box sixtywidth">
-
-  <% if flash[:notice] %>
-    <div class="errors">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
-
   <br>
 
   <h2>Login</h2>
 
-  <%= form_for @user, url: sessions_path do |f| %>
+  <%= form_for User.new, url: sessions_path do |f| %>
 
     <%= f.label :username %>
     <br>
