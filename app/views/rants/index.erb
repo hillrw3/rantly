@@ -12,9 +12,11 @@
             <%= link_to "Unfollow", follower_path(id: rant.user.id), method: :delete %>
           <% end %>
         </div>
+        <div class="rant centered-text">
         <h4><%= rant.subject %></h4>
 
         <p><%= link_to rant.rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
+        </div>
         <hr width="60%">
       </div>
     </div>

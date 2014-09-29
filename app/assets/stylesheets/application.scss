@@ -35,7 +35,7 @@ h1 {
 }
 
 .half-height-gray {
-  height: 45vh  ;
+  height: 45vh;
   width: 100%;
   background: gray;
 }
@@ -190,8 +190,15 @@ nav {
 }
 
 .user-info {
-  width: 15%;
+  width: 15vw;
   text-align: left;
+  //   * {
+  //     display: inline-block;
+  //     width: 100%;
+  //     text-align: center;
+  //     margin: auto;
+  //   }
+  //  a { clear: both; }
 }
 
 .one-rant {
@@ -209,7 +216,9 @@ nav {
   text-decoration: none;
   color: black;
 
-  &:hover { font-weight: bold; }
+  &:hover {
+    font-weight: bold;
+  }
 }
 
 #home-button {
@@ -217,7 +226,9 @@ nav {
 }
 
 #logout-button {
-  margin-top: -3vh;
+  margin-top: -4vh;
+  margin-right: 1vw;
+  padding: 1vh 3vw 1vh 3vw;
 }
 
 .nav-buttons {
