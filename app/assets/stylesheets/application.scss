@@ -7,7 +7,6 @@
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   box-sizing: border-box;
   background: gray;
-//  overflow: hidden;
 }
 
 body {
@@ -111,6 +110,7 @@ nav {
   height: 10vh;
   background: #333333;
   vertical-align: middle;
+  margin-top: 0;
 
   * {
     background: #333333;
@@ -179,6 +179,15 @@ nav {
   }
 }
 
+.user-info {
+  display: inline-block;
+  text-align: center;
+  ul
+  {
+    list-style-type: none;
+  }
+}
+
 .my-rants{
   width: 90%;
   margin: auto;
@@ -188,14 +197,6 @@ nav {
     display: inline-block;
     height: 100%;
     width: 100%;
-  }
-  .user-info {
-    display: inline-block;
-    text-align: center;
-    ul
-    {
-      list-style-type: none;
-    }
   }
   .rant {
     display: inline-block;
@@ -223,7 +224,7 @@ nav {
 }
 
 #logout-button {
-  margin-top: -3vh;
+  margin-top: -4vh;
   margin-right: 1vw;
   padding: 1vh 3vw 1vh 3vw;
 }
@@ -239,7 +240,7 @@ nav {
 }
 
 .nav-buttons {
-  margin-top: 2vh;
+  padding-top: 2vh;
 }
 
 .form {
