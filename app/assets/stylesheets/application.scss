@@ -7,7 +7,7 @@
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   box-sizing: border-box;
   background: gray;
-  overflow: hidden;
+//  overflow: hidden;
 }
 
 body {
@@ -25,7 +25,7 @@ h1 {
 }
 
 .half-height {
-  height: 45vh;
+  height: 45%;
   width: 100%;
   background: white;
 
@@ -67,10 +67,6 @@ h1 {
   }
 }
 
-.individual_rants {
-
-}
-
 .quarterwidth {
   width: 25vw;
   height: 100vh;
@@ -89,7 +85,7 @@ h1 {
 
 .three-quarter-width {
   width: 75vw;
-  height: 100vh;
+  height: 100%;
 }
 
 .float-left {
@@ -184,12 +180,14 @@ nav {
 }
 
 .my-rants{
-  width: 80%;
+  width: 90%;
   margin: auto;
   text-align: left;
+  display: block;
   .one-rant{
     display: inline-block;
     height: 100%;
+    width: 100%;
   }
   .user-info {
     display: inline-block;
@@ -202,6 +200,7 @@ nav {
   .rant {
     display: inline-block;
     height: 100%;
+    width: 70%;
   }
 }
 
