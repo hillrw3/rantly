@@ -289,6 +289,7 @@ nav {
     background-color: limegreen;
     display: block;
     width: 100%;
+    color: white;
   }
   input[type=radio] {
     width: auto;
@@ -297,7 +298,7 @@ nav {
 
   .left-section {
     width: 45%;
-    margin-right: 5%;
+    margin-right: 8%;
     display: inline-block;
     position: relative;
   }
@@ -307,4 +308,5 @@ nav {
     display: inline-block;
     position: relative;
   }
+
 }

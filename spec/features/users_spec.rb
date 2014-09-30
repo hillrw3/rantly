@@ -12,7 +12,7 @@ feature "Users specs" do
     fill_in "First name", with: "Rob"
     fill_in "Last name", with: "Hill"
     fill_in "Bio", with: "Just a simple fellow who likes to Rant"
-    click_on "Register"
+    click_on "REGISTER"
     expect(page).to have_content "Thanks for registering.  Get to ranting!"
 
     click_link "Login"
@@ -39,7 +39,7 @@ feature "Users specs" do
     fill_in "First name", with: "Jim"
     fill_in "Last name", with: "Jam"
     fill_in "Bio", with: "Just a simple fellow who likes to Rant"
-    click_on "Register"
+    click_on "REGISTER"
     expect(page).to have_content "Thanks for registering.  Get to ranting!"
 
     click_link "Login"

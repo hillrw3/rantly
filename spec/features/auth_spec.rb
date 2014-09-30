@@ -12,7 +12,7 @@ feature 'User creation and login' do
     fill_in "First name", with: "Rob"
     fill_in "Last name", with: "Hill"
     fill_in "Bio", with: "Just a simple fellow who likes to Rant"
-    click_on "Register"
+    click_on "REGISTER"
     expect(page).to have_content "Thanks for registering.  Get to ranting!"
 
     click_link "Login"
@@ -43,7 +43,7 @@ feature 'User creation and login' do
     fill_in "First name", with: "Rob"
     fill_in "Last name", with: "Hill"
     fill_in "Bio", with: "Just a simple fellow who likes to Rant"
-    click_on "Register"
+    click_on "REGISTER"
     expect(page).to have_content "Username has already been taken"
   end
 
@@ -57,7 +57,7 @@ feature 'User creation and login' do
     fill_in "First name", with: "Rob"
     fill_in "Last name", with: "Hill"
     fill_in "Bio", with: "Just a simple fellow who likes to Rant"
-    click_on "Register"
+    click_on "REGISTER"
     expect(page).to have_content "Username can't be blank"
     expect(page).to have_content "Password is too short"
   end
@@ -72,7 +72,7 @@ feature 'User creation and login' do
     fill_in "First name", with: "Rob"
     fill_in "Last name", with: "Hill"
     fill_in "Bio", with: "Just a simple fellow who likes to Rant"
-    click_on "Register"
+    click_on "REGISTER"
     expect(page).to have_content "Thanks for registering.  Get to ranting!"
 
     click_link "Login"
