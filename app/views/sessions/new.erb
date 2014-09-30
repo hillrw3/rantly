@@ -1,10 +1,9 @@
 <div class="white-box sixtywidth">
   <br>
 
-  <h2>Login</h2>
-
-  <%= form_for User.new, url: sessions_path do |f| %>
-
+  <%= form_for User.new, url: sessions_path, html: {class: 'form'} do |f| %>
+    <h2>Login</h2>
+    <br/>
     <%= f.label :username %>
     <br>
     <%= f.text_field :username %>
@@ -13,7 +12,8 @@
     <br>
     <%= f.password_field :password %>
     <br><br>
-
+    <hr/>
+    <br/>
     <%= f.submit "Login", class: 'green-button' %>
 
   <% end %>
