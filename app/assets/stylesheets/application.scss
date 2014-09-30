@@ -272,9 +272,12 @@ nav {
 
 .form {
   padding: 3vh;
+  border: 1px solid black;
 
   input {
     width: 100%;
+    display: inline-block;
+    position: relative;
   }
 
   textarea {
@@ -294,9 +297,14 @@ nav {
 
   .left-section {
     width: 45%;
+    margin-right: 5%;
+    display: inline-block;
+    position: relative;
   }
 
   .right-section {
     width: 45%;
+    display: inline-block;
+    position: relative;
   }
 }
