@@ -67,7 +67,7 @@ h1 {
   }
 }
 
-.individual_rants{
+.individual_rants {
 
 }
 
@@ -183,53 +183,26 @@ nav {
   }
 }
 
-.my-rants {
-  p {
-    margin-bottom: 0;
+.my-rants{
+  width: 80%;
+  margin: auto;
+  text-align: left;
+  .one-rant{
+    display: inline-block;
+    height: 100%;
   }
-
-  hr {
-    margin-top: 5vh;
-  }
-}
-
-//.user-info {
-//  width: 500px;
-//  height: 500px;
-//  text-align: left;
-//  border: 1px solid black;
-//  position: relative;
-//     * {
-//       display: block;
-//       width: 100%;
-//       text-align: center;
-//       margin-left: auto;
-//       margin-right: auto;
-//     }
-//}
-//
-//.one-rant {
-//  overflow: auto;
-//  min-height: 10vh;
-//  width: 50px;
-//}
-
-.one-rant {
   .user-info {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    p {
-      text-align: center;
-    }
-    .user-pic  {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 150px;
-
+    display: inline-block;
+    text-align: center;
+    ul
+    {
+      list-style-type: none;
     }
   }
-
+  .rant {
+    display: inline-block;
+    height: 100%;
+  }
 }
 
 .following {
@@ -310,3 +283,5 @@ nav {
   }
 
 }
+
+
