@@ -1,8 +1,9 @@
-<h2>Latest Rants</h2>
+<h1 class="centered-text">Favorites</h1>
+<br/>
 
-<% if @other_rants != nil %>
+<% if @favorite_rants != nil %>
 
-  <% @other_rants.each do |rant| %>
+  <% @favorite_rants.each do |rant| %>
     <div class="my-rants">
       <div class="one-rant">
         <div class="user-info">
@@ -23,38 +24,10 @@
           <h4 class="centered-text"><%= rant.subject %></h4>
 
           <p><%= link_to rant.rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
-          <%= link_to "Favorite", new_favorited_rant_path(rant_id: rant.id) %>
+          <%= link_to "Unfavorite" %>
         </div>
         <hr width="60%">
       </div>
-    </div>
-
-  <% end %>
-
-<% end %>
-
-<hr>
-
-<h2>My Rants</h2>
-
-<% if @my_rants != nil %>
-
-  <% @my_rants.each do |rant| %>
-    <div class="my-rants">
-      <div class="user-info">
-        <ul>
-          <li><%= link_to rant.user.username, user_path(id: rant.user.id), class: "link-no-dec" %></li>
-          <li>
-            <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
-          </li>
-        </ul>
-      </div>
-      <div class="rant">
-        <h4 class="centered-text"><%= rant.subject %></h4>
-        <p><%= rant.rant %></p>
-        <%= link_to "Delete", rant_path(id: rant.id), method: :delete, class: 'float-right' %>
-      </div>
-      <hr width="60%">
     </div>
 
   <% end %>

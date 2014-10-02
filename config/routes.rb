@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :users
   resources :followers
   resource :search, only: :index
+  resources :favorited_rants
+
 end

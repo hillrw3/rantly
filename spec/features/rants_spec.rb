@@ -79,7 +79,16 @@ feature "Rants" do
     click_on "Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci"
     expect(page).to have_content "Pugs"
     expect(page).to have_content "Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci"
+  end
 
+  scenario "User can favorite a rant" do
+    create_user_with_rant
+    sign_in
+    expect(page).to have_content "something fun"
+    click_on "Favorite"
+    click_on "Favorites"
+    expect(page).to have_content "something fun"
+    expect(page).to have_content "Unfavorite"
   end
 
 end
