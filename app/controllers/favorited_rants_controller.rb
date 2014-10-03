@@ -20,4 +20,9 @@ class FavoritedRantsController < ApplicationController
     end
   end
 
+  def destroy
+    FavoritedRant.find(params[:id]).destroy
+    redirect_to :back
+  end
+
 end

@@ -12,18 +12,19 @@
               <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
             </li>
 
-            <% if Follower.find_by(user_id: session[:user_id], following: rant.user.id) == nil %>
-              <li><%= link_to "Follow", new_follower_path(ranter_id: rant.user.id, ranter_name: rant.user.username) %></li>
-            <% else %>
-              <li><%= link_to "Unfollow", follower_path(id: rant.user.id), method: :delete %></li>
-            <% end %>
+            <!--<% if Follower.find_by(user_id: session[:user_id], following: rant.user.id) == nil %>-->
+              <!--<li><%= link_to "Follow", new_follower_path(ranter_id: rant.user.id, ranter_name: rant.user.username) %></li>-->
+            <!--<% else %>-->
+              <!--<li><%= link_to "Unfollow", follower_path(id: rant.user.id), method: :delete %></li>-->
+            <!--<% end %>-->
+            <li><%= follow_link(rant) %></li>
           </ul>
         </div>
         <div class="rant">
           <h4 class="centered-text"><%= rant.subject %></h4>
 
           <p><%= link_to rant.rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
-          <%= link_to "Favorite", new_favorited_rant_path(rant_id: rant.id) %>
+          <%= favorite_link(rant) %>
         </div>
         <hr width="60%">
       </div>
