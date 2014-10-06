@@ -285,8 +285,10 @@ nav {
 
 }
 
-#favorite-link {
+.favorite-link {
+  display: block;
   text-align: right;
+  margin-right: 5%;
 }
 
 
