@@ -16,7 +16,7 @@
         <li><%= link_to "Dashboard  |", rants_path, class: 'white-text' %></li>
         <li><%= link_to "Following  |", followers_path, class: 'white-text' %></li>
         <li><%= link_to "Favorites  |", favorited_rants_path, class: 'white-text' %></li>
-        <li><%= link_to "Search", url: '#', class: 'white-text' %></li>
+        <li><%= link_to "Search", '/search', class: 'white-text' %></li>
       </div>
       <li><%= link_to "LOGOUT", signout_path, class: 'float-right white-text green-button', id: 'logout-button' %></li>
     </ul>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :sessions
   resources :users
   resources :followers
-  resource :search, only: :index
+  resources :search, only: :index
   resources :favorited_rants
 
 end
