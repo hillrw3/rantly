@@ -19,10 +19,8 @@ class RantsController < ApplicationController
   end
 
   def create
-    @rant = Rant.new(subject: params[:rant][:subject],
-                     rant: params[:rant][:rant],
-                     user_id: session[:user_id]
-    )
+    @rant = Rant.new(rant_params)
+    @rant.update(user_id: session[:user_id])
 
     if @rant.save
       flash[:notice] = "Feel better? Rant posted."
@@ -40,6 +38,12 @@ class RantsController < ApplicationController
       flash[:notice] = "Your rant was deleted."
     end
     redirect_to rants_path
+  end
+
+  private
+
+  def rant_params
+    params.require(:rant).permit(:subject, :rant)
   end
 
 end
