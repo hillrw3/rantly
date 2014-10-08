@@ -1,7 +1,11 @@
 class SearchController < ApplicationController
 
   def index
-    @search = params[:search]
+    if params[:search] == nil
+      @result = nil
+    else
+      @result = User.find_by(last_name: params[:search])
+    end
   end
 
 end
