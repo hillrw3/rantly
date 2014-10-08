@@ -1,15 +1,18 @@
 <h1 class="centered-text">Following</h1>
 
-
-<% @following.each do |user| %>
-  <div class="user-info">
-    <ul>
-      <li><%= link_to user.username, user_path(id: user.id), class: "link-no-dec" %></li>
-      <li>
-        <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
-      </li>
-      <li><%= link_to "Unfollow", follower_path(id: user.id), method: :delete %></li>
-    </ul>
-  </div>
+<% if @following.length == 0 %>
+    <p>Go find someone to follow!</p>
+<% else %>
+  <% @following.each do |user| %>
+    <div class="user-info">
+      <ul>
+        <li><%= link_to User.find(user.following).username, user_path(id: user.following), class: "link-no-dec" %></li>
+        <li>
+          <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
+        </li>
+        <li><%= link_to "Unfollow", follower_path(id: user.following), method: :delete %></li>
+      </ul>
+    </div>
+  <% end %>
 <% end %>
 

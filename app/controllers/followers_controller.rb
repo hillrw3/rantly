@@ -2,17 +2,7 @@ class FollowersController < ApplicationController
 
   def index
     @user = session[:user_id]
-    following_ids = Follower.where(user_id: @user)
-    @following = []
-    if following_ids.class == nil
-      @following << "Go find someone to follow."
-    elsif following_ids.class == Fixnum
-      @following << User.find(following_ids.following).username
-    else
-      following_ids.each do |following|
-        User.where(id: following.following).each { |user| @following << user }
-      end
-    end
+    @following = Follower.where(user_id: @user)
   end
 
   def new
