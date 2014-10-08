@@ -1,4 +1,8 @@
 <h1 class="centered-text">Search</h1>
 <hr/>
 
-<%= form_tag %>
+<%= form_tag('/search', method: :get, class: "search-form") do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag "SEARCH" %>
+<% end %>
+

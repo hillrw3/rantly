@@ -291,4 +291,18 @@ nav {
   margin-right: 5%;
 }
 
+.search-form {
+  padding-top: 1%;
+  padding-bottom: 100%;
+
+  input[type=submit] {
+    background-color: limegreen;
+    color: white;
+  }
+
+  input[type=text] {
+    width: 70%
+  }
+
+}
 
