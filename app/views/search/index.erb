@@ -9,3 +9,31 @@
 <div class="search-results">
   <%= @result unless @result == nil %>
 </div>
+
+<% if @results != nil %>
+
+  <% @results.each do |rant| %>
+    <div class="my-rants">
+      <div class="one-rant">
+        <div class="user-info">
+          <ul>
+            <li><%= link_to rant.user.username, user_path(id: rant.user.id), class: "link-no-dec" %></li>
+            <li>
+              <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
+            </li>
+            <li><%= follow_link(rant) %></li>
+          </ul>
+        </div>
+        <div class="rant">
+          <h4 class="centered-text"><%= rant.subject %></h4>
+
+          <p><%= link_to rant.rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
+          <%= favorite_link(rant) %>
+        </div>
+        <hr width="60%">
+      </div>
+    </div>
+
+  <% end %>
+
+<% end %>

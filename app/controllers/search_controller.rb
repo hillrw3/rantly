@@ -1,10 +1,18 @@
 class SearchController < ApplicationController
 
   def index
+
+    @results = get_results(params[:search])
+  end
+
+
+  private
+
+  def get_results(query)
     if params[:search] == nil
-      @result = nil
+      nil
     else
-      @result = User.find_by(last_name: params[:search])
+      User.find_by(last_name: query).rants
     end
   end
 
