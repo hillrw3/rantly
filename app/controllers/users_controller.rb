@@ -5,13 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(username: params[:user][:username],
-                     password: params[:user][:password],
-                     first_name: params[:user][:first_name],
-                     last_name: params[:user][:last_name],
-                     bio: params[:user][:bio],
-                     rant_frequency: params[:user][:rant_frequency]
-    )
+    @user = User.new(user_params)
 
     if @user.save
       flash[:notice] = "Thanks for registering.  Get to ranting!"
@@ -32,20 +26,21 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(session[:user_id])
-    @user.update(username: params[:user][:username],
-                 password: params[:user][:password],
-                 first_name: params[:user][:first_name],
-                 last_name: params[:user][:last_name],
-                 bio: params[:user][:bio],
-                 rant_frequency: params[:user][:rant_frequency]
-    )
+    @user.update(user_params)
 
     if @user.save
       flash[:notice] = "Your info has been updated!"
       redirect_to rants_path
     else
+      flash[:error] = "Something went wrong...."
       render :edit
     end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :password, :first_name, :last_name, :bio, :rant_frequency)
   end
 
 end
