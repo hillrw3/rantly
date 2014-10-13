@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.ip_id = IPAddress.find_by(ip: request.remote_ip).id
 
     if @user.save
       flash[:notice] = "Thanks for registering.  Get to ranting!"

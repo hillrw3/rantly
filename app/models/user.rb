@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  belongs_to :ip
   has_many :rants
   has_many :favorited_rants
 

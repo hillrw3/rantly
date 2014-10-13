@@ -1,7 +1,9 @@
 class RantsController < ApplicationController
 
   def splash
+    ip = log_ip
     if session[:user_id] == nil
+      flash[:notice] = "Welcome back! Please consider registering to begin your ranting" if ip.visits > 1 && User.find_by(ip_id: ip.id) == nil
       render :splash
     else
       redirect_to rants_path
