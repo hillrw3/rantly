@@ -85,7 +85,7 @@ feature "Rants" do
     create_user_with_rant
     sign_in
     expect(page).to have_content "something fun"
-    click_on "Favorite"
+    click_on "0 - Favorite"
     click_on "Favorites"
     expect(page).to have_content "something fun"
     expect(page).to have_content "Unfavorite"
