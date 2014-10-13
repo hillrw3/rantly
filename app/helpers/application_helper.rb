@@ -11,9 +11,9 @@ module ApplicationHelper
   def favorite_link(rant)
     favorited_rant = FavoritedRant.find_by(user_id: session[:user_id], rant_id: rant.id)
     if favorited_rant == nil
-      link_to "Favorite", new_favorited_rant_path(rant_id: rant.id), class: "favorite-link"
+      link_to "#{FavoritedRant.where(rant_id: rant.id).count} - Favorite", new_favorited_rant_path(rant_id: rant.id), class: "favorite-link"
     else
-      link_to "Unfavorite", favorited_rant_path(id: favorited_rant), method: :delete, class: "favorite-link"
+      link_to "#{FavoritedRant.where(rant_id: rant.id).count} - Unfavorite", favorited_rant_path(id: favorited_rant), method: :delete, class: "favorite-link"
     end
   end
 
