@@ -10,7 +10,7 @@
 <p><%= @user.bio %></p>
 
 <br/><br/><br/>
-<% @user.rants.sort_by { |r| FavoritedRant.where(rant_id: r.id).count}.reverse.each do |rant| %>
+<% @user.sorted_rants.each do |rant| %>
   <h3><%= rant.subject %></h3>
   <p><%= rant.rant %></p>
   <%= favorite_link(rant) %>
