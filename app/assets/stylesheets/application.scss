@@ -87,6 +87,7 @@ h1 {
 .three-quarter-width {
   width: 75vw;
   height: 100%;
+  padding-bottom: 10vh;
 }
 
 .float-left {
@@ -308,5 +309,10 @@ nav {
     width: 70%
   }
 
+}
+
+.link-on-right {
+  float: right;
+  margin-right: 3vw;
 }
 
