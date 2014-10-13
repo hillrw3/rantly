@@ -24,9 +24,11 @@ h1 {
 }
 
 .half-height {
-  height: 45%;
+  height: 45vh;
   width: 100%;
   background: white;
+
+  h1 { padding-top: 3vh;}
 
   * {
     background: white;
