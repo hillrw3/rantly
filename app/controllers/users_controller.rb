@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(session[:user_id])
-    @user.update(user_params)
+    @user.update_attributes(user_params)
 
     if @user.save
       flash[:notice] = "Your info has been updated!"
@@ -41,6 +41,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :password, :first_name, :last_name, :bio, :rant_frequency)
+  end
+
+  def user_update_params
+    params.require(:user).permit(:username, :first_name, :last_name, :bio, :rant_frequency)
   end
 
 end
