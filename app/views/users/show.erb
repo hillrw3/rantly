@@ -1,6 +1,6 @@
 <h1><%= @user.username %></h1>
 <% if @following_check == nil %>
-  <%= link_to "Follow", new_follower_path(ranter_id: @user.id, ranter_name: @user.username), class: "float-right" %>
+  <%= link_to "Follow", new_follower_path(ranter_id: @user.id, ranter_name: @user.username), class: "link-on-right" %>
 <% else %>
   <%= link_to "Unfollow", follower_path(id: @user.id), method: :delete, class: "link-on-right"   %>
 <% end %>
