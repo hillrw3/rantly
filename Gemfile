@@ -48,6 +48,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pg'
 gem 'launchy'
+gem 'carrierwave'
 
 group :production do
   gem 'rails_12factor'
