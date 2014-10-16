@@ -1,4 +1,5 @@
 <h1><%= @user.username %></h1>
+<%= image_tag(@user.avatar.url, class: "user-pic") %>
 <% if @following_check == nil %>
   <%= link_to "Follow", new_follower_path(ranter_id: @user.id, ranter_name: @user.username), class: "link-on-right" %>
 <% else %>

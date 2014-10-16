@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :favorited_rants
 
   validates :username, presence: true, uniqueness: true
+  validates :avatar, presence: true
   validates :password, length: {minimum: 8}, on: :create
 
 

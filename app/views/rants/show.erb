@@ -1,4 +1,5 @@
 <h1><%= @rant.subject %></h1>
 <hr/>
+<%= image_tag(rant.user.avatar.url, class: "user-pic") %>
 <p><%= link_to @rant.user.username, user_path(id: @rant.user.id), class: "link-no-dec float-left" %></p>
 <p><%= @rant.rant %></p>

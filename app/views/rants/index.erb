@@ -9,10 +9,7 @@
           <ul>
             <li><%= link_to rant.user.username, user_path(rant.user), class: "link-no-dec" %></li>
             <li>
-              <!--<img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">-->
-              <!--<%= image_tag(User.find(11).avatar.url, class: "user-pic") %>-->
               <%= image_tag(rant.user.avatar.url, class: "user-pic") %>
-
             </li>
             <li><%= follow_link(rant) %></li>
           </ul>
@@ -43,7 +40,7 @@
         <ul>
           <li><%= link_to rant.user.username, user_path(id: rant.user.id), class: "link-no-dec" %></li>
           <li>
-            <img class="user-pic" src="http://3.bp.blogspot.com/-rhdlo4oeF_E/TVbncQtqb6I/AAAAAAAAAJ8/A-yoyYAD9XM/s1600/istockphoto_5569062-angry-childish-face.jpg">
+            <%= image_tag(rant.user.avatar.url, class: "user-pic") %>
           </li>
         </ul>
       </div>
