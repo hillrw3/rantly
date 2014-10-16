@@ -17,4 +17,5 @@ class User < ActiveRecord::Base
   def sorted_rants
     self.rants.sort_by { |r| FavoritedRant.where(rant_id: r.id).count}.reverse
   end
+
 end
