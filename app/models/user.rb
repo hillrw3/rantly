@@ -1,3 +1,5 @@
+require 'carrierwave/orm/activerecord'
+
 class User < ActiveRecord::Base
   has_secure_password
 
@@ -7,7 +9,8 @@ class User < ActiveRecord::Base
   has_many :favorited_rants
 
   validates :username, presence: true, uniqueness: true
-  validates :password, length: {minimum: 8}
+  validates :password, length: {minimum: 8}, on: :create
+
 
   def self.flex_search(query)
     users = User.where("username LIKE :query OR last_name LIKE :query OR first_name LIKE :query", query: "%#{query}%")

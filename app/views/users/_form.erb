@@ -1,6 +1,4 @@
 <% if @user.errors.present? %>
-  <p></p>
-
   <div class="errors">
     <% @user.errors.full_messages.each do |message| %>
       <p><%= message %></p>
@@ -43,7 +41,7 @@
   <%= f.label :rant_frequency_weekly, 'Weekly' %>
   <%= f.radio_button :rant_frequency, 'Monthly' %>
   <%= f.label :rant_frequency_monthly, 'Monthly' %>
-  <br/>
+  <br/><br/>
   <%= f.label :avatar, "Upload a Profile Picture" %>
   <%= f.file_field :avatar %>
   <br/><br/>
