@@ -28,7 +28,9 @@ h1 {
   width: 100%;
   background: white;
 
-  h1 { padding-top: 3vh;}
+  h1 {
+    padding-top: 3vh;
+  }
 
   * {
     background: white;
@@ -92,6 +94,7 @@ h1 {
 
 .float-left {
   float: left;
+  margin-left: 3%;
 }
 
 .float-right {
@@ -187,19 +190,18 @@ nav {
   display: inline-block;
   text-align: center;
   max-width: 29%;
-  ul
-  {
+  ul {
     list-style-type: none;
     padding-left: 0;
   }
 }
 
-.my-rants{
+.my-rants {
   width: 90%;
   margin: auto;
   text-align: left;
   display: block;
-  .one-rant{
+  .one-rant {
     display: inline-block;
     height: 100%;
     width: 100%;
@@ -316,5 +318,24 @@ nav {
 .link-on-right {
   float: right;
   margin-right: 3vw;
+}
+
+.show-rant {
+  text-align: left;
+
+
+  .user-pic-show {
+    width: 17vw;
+    margin-right: 2%;
+  }
+  p {
+    text-align: left;
+    margin-left: 3%;
+  }
+}
+
+.user-pic-small {
+  width: 15vw;
+  max-width: 110px;
 }
 

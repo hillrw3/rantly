@@ -1,5 +1,32 @@
 <h1><%= @rant.subject %></h1>
+<%= favorite_link(@rant) %>
 <hr/>
-<%= image_tag(rant.user.avatar.url, class: "user-pic") %>
-<p><%= link_to @rant.user.username, user_path(id: @rant.user.id), class: "link-no-dec float-left" %></p>
-<p><%= @rant.rant %></p>
+<div class="show-rant">
+  <%= image_tag(@rant.user.avatar.url, class: "user-pic-show float-left") %>
+  <%= link_to "by #{@rant.user.username}", user_path(id: @rant.user.id), class: "link-no-dec" %>
+  <br/>
+
+  <p><%= @rant.rant %></p>
+</div>
+
+<% unless @rant.comments == nil %>
+  <% @rant.comments.each do |comment| %>
+    <div class="my-rants">
+      <div class="one-rant">
+        <div class="user-info">
+          <ul>
+            <li><%= link_to comment.commenter.username, user_path(comment.commenter), class: "link-no-dec" %></li>
+            <li>
+              <%= image_tag(comment.commenter.avatar.url, class: "user-pic-small") %>
+            </li>
+          </ul>
+        </div>
+        <div class="rant">
+          <p class="centered-text"><%= comment.body %></p>
+          <hr width="60%">
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+<% end %>
