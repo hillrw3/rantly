@@ -1,7 +1,7 @@
 <h1 class="centered-text">Favorites</h1>
 <br/>
 
-<% if @favorite_rants != nil %>
+<% unless @favorite_rants == nil %>
 
   <% @favorite_rants.each do |rant| %>
     <div class="my-rants">

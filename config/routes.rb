@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :followers
   resources :search, only: :index
   resources :favorited_rants
+  resources :comments, only: :create
 
 end

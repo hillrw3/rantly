@@ -18,6 +18,7 @@ class RantsController < ApplicationController
 
   def show
     @rant = Rant.find(params[:id])
+    @comment = Comment.new
   end
 
   def create

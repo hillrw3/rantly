@@ -323,19 +323,35 @@ nav {
 .show-rant {
   text-align: left;
 
-
-  .user-pic-show {
-    width: 17vw;
-    margin-right: 2%;
-  }
   p {
     text-align: left;
     margin-left: 3%;
   }
 }
 
+.user-pic-show {
+  width: 17vw;
+  margin-right: 2%;
+}
+
 .user-pic-small {
-  width: 15vw;
+  width: 10vw;
   max-width: 110px;
 }
 
+.comment-form {
+
+  textarea {
+    width: 90%;
+  }
+
+  #small-green-button {
+    color: white;
+    background-color: limegreen;
+    float: right;
+    width: auto;
+    height: auto;
+    margin-top: 1%;
+    margin-right: 5%;
+  }
+}
