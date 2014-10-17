@@ -8,7 +8,7 @@
       <ul>
         <li><%= link_to User.find(user.following).username, user_path(id: user.following), class: "link-no-dec" %></li>
         <li>
-          <%= image_tag(User.find(user.following).avatar.url, class: "user-pic") %>
+          <%= image_tag(User.find(user.following).avatar.url, class: "user-pic-show") %>
         </li>
         <li><%= link_to "Unfollow", follower_path(id: user.following), method: :delete %></li>
       </ul>
