@@ -14,8 +14,7 @@ class Rant < ActiveRecord::Base
   def truncated_rant
     array = self.rant.split(/ /)
     rant = array[0..299].join(' ')
-    rant += '...' if array.length >= 299
-    rant
+    array.length >= 299 ? rant += '...' : rant
   end
 
 end

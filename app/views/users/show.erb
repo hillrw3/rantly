@@ -13,6 +13,6 @@
 <br/><br/><br/>
 <% @user.sorted_rants.each do |rant| %>
   <h3><%= rant.subject %></h3>
-  <p><%= rant.rant %></p>
+  <p><%= link_to rant.truncated_rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
   <%= favorite_link(rant) %>
 <% end %>

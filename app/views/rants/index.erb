@@ -46,7 +46,7 @@
       </div>
       <div class="rant">
         <h4 class="centered-text"><%= rant.subject %></h4>
-        <p><%= rant.truncated_rant %></p>
+        <p><%= link_to rant.truncated_rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
         <%= link_to "Delete", rant_path(id: rant.id), method: :delete, class: 'float-right' %>
       </div>
       <hr width="60%">
