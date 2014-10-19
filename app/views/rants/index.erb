@@ -17,7 +17,7 @@
         <div class="rant">
           <h4 class="centered-text"><%= rant.subject %></h4>
 
-          <p><%= link_to rant.rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
+          <p><%= link_to rant.truncated_rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
           <%= favorite_link(rant) %>
         </div>
         <hr width="60%">

@@ -10,4 +10,12 @@ class Rant < ActiveRecord::Base
   def self.flex_search(query)
     Rant.where("rant LIKE :query OR subject LIKE :query", query: "%#{query}%")
   end
+
+  def truncated_rant
+    array = self.rant.split(/ /)
+    rant = array[0..299].join(' ')
+    rant += '...' if array.length >= 299
+    rant
+  end
+
 end
