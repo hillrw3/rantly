@@ -3,6 +3,8 @@
  *= require_self
  */
 
+$green: #38761d;
+
 * {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   box-sizing: border-box;
@@ -102,7 +104,7 @@ h1 {
 }
 
 .green-button {
-  background-color: limegreen;
+  background-color: $green;
   font-size: 1em;
 }
 
@@ -139,7 +141,7 @@ nav {
         color: white;
 
         &:hover {
-          color: limegreen;
+          color: $green;
         }
       }
     }
@@ -151,14 +153,14 @@ nav {
   background: white;
 
   button {
-    background: limegreen;
+    background: $green;
     width: 100%;
   }
 }
 
 .green-box {
   height: 50px;
-  background: limegreen !important;
+  background: $green !important;
   color: white;
   text-align: center;
 }
@@ -173,7 +175,7 @@ nav {
   text-decoration: none;
 
   &:hover {
-    color: limegreen;
+    color: $green;
   }
 
 }
@@ -225,7 +227,7 @@ nav {
   color: black;
 
   &:hover {
-    color: limegreen;
+    color: $green;
   }
 }
 
@@ -270,7 +272,7 @@ nav {
 
   input[type=submit] {
     margin: 0 auto;
-    background-color: limegreen;
+    background-color: $green;
     display: block;
     width: 100%;
     color: white;
@@ -307,7 +309,7 @@ nav {
   padding-top: 1%;
 
   input[type=submit] {
-    background-color: limegreen;
+    background-color: $green;
     color: white;
   }
 
@@ -349,7 +351,7 @@ nav {
 
   #small-green-button {
     color: white;
-    background-color: limegreen;
+    background-color: $green;
     float: right;
     width: auto;
     height: auto;
