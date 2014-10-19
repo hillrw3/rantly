@@ -1,16 +1,18 @@
 <h1><%= @user.username %></h1>
-<%= image_tag(@user.avatar.url, class: "user-pic-show") %>
 <% if @following_check == nil %>
   <%= link_to "Follow", new_follower_path(ranter_id: @user.id, ranter_name: @user.username), class: "link-on-right" %>
 <% else %>
-  <%= link_to "Unfollow", follower_path(id: @user.id), method: :delete, class: "link-on-right"   %>
+  <%= link_to "Unfollow", follower_path(id: @user.id), method: :delete, class: "link-on-right" %>
 <% end %>
 
-
 <hr width="95%">
-<p><%= @user.bio %></p>
+<div>
+  <%= image_tag(@user.avatar.url, class: "user-pic-show float-left") %>
+  <h2><%= "#{@user.rant_frequency} Ranter" %></h2>
+  <p><%= @user.bio %></p>
+</div>
 
-<br/><br/><br/>
+<br/><br/><br/><br/>
 <% @user.sorted_rants.each do |rant| %>
   <h3><%= rant.subject %></h3>
   <p><%= link_to rant.truncated_rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
