@@ -9,7 +9,11 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      redirect_to rants_path
+      if current_user.admin
+        redirect_to admins_path
+      else
+        redirect_to rants_path
+      end
     else
       flash[:error] = "Login failed"
       render :new

@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20141017222349) do
     t.datetime "updated_at"
     t.integer  "ip_id"
     t.string   "avatar"
-    t.boolean  "admin",           default: false
+    t.boolean  "admins",           default: false
   end
 
 end

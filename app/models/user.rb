@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :comments, class_name:  "Comment", foreign_key: :commenter_id
 
   validates :username, presence: true, uniqueness: true
-  validates :avatar, presence: true
+  validates :avatar, presence: true, unless: :admin
   validates :password, length: {minimum: 8}, on: :create
 
 

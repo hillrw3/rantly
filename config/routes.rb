@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :search, only: :index
   resources :favorited_rants
   resources :comments, only: :create
+  resource :admins, only: :show
 
 end
