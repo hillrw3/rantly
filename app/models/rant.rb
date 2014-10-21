@@ -11,10 +11,22 @@ class Rant < ActiveRecord::Base
     Rant.where("rant LIKE :query OR subject LIKE :query", query: "%#{query}%")
   end
 
+  def rant_to_array
+    self.rant.split(/ /)
+  end
+
   def truncated_rant
-    array = self.rant.split(/ /)
+    array = rant_to_array
     rant = array[0..299].join(' ')
     array.length >= 299 ? rant += '...' : rant
+  end
+
+  def self.where_user_mentioned(user)
+    mentioned_rants = []
+    Rant.all.map do |rant|
+      mentioned_rants << rant if rant.rant.include? "@#{user.username}"
+    end
+    mentioned_rants
   end
 
 end

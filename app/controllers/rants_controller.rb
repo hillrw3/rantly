@@ -11,9 +11,9 @@ class RantsController < ApplicationController
   end
 
   def index
-    @user = User.find(session[:user_id])
-    @my_rants = Rant.where(user_id: session[:user_id])
-    @other_rants = Rant.where.not(user_id: session[:user_id])
+    @my_rants = Rant.where(user_id: current_user.id)
+    p @mentioned_rants = Rant.where_user_mentioned(current_user)
+    @other_rants = Rant.where.not(user_id: current_user.id)
   end
 
   def show
