@@ -1,1 +1,30 @@
-hello admin
+<div class="centered-text white-background">
+  <h2 class="top-padding">Most Recent Rants</h2>
+
+  <% unless @rants == nil %>
+
+    <% @rants.each do |rant| %>
+      <div class="my-rants">
+        <div class="one-rant">
+          <div class="user-info">
+            <ul>
+              <li><%= link_to rant.user.username, user_path(rant.user), class: "link-no-dec" %></li>
+              <li>
+                <%= image_tag(rant.user.avatar.url, class: "user-pic") %>
+              </li>
+            </ul>
+          </div>
+          <div class="rant">
+            <h4 class="centered-text"><%= rant.subject %></h4>
+
+            <p><%= link_to rant.truncated_rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
+            <%= "Ranted at " + rant.created_at.strftime("%m-%e-%y %H:%M") %>
+          </div>
+          <hr width="60%">
+        </div>
+      </div>
+
+    <% end %>
+
+  <% end %>
+</div>

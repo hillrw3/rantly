@@ -11,8 +11,8 @@ class RantsController < ApplicationController
   end
 
   def index
-    @my_rants = Rant.where(user_id: current_user.id)
-    p @mentioned_rants = Rant.where_user_mentioned(current_user)
+    @my_rants = current_user.rants
+    @mentioned_rants = Rant.where_user_mentioned(current_user)
     @other_rants = Rant.where.not(user_id: current_user.id)
   end
 
