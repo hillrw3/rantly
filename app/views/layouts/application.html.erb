@@ -14,8 +14,8 @@
       <li><%= link_to "Rant.ly", root_path, class: 'float-left white-text', id: 'home-button' %></li>
       <div class="centered-text nav-buttons">
         <li><%= link_to "Dashboard  |", admins_path, class: 'white-text' %></li>
-        <li><%= link_to "Rants  |", '#', class: 'white-text' %></li>
-        <li><%= link_to "Users", '#', class: 'white-text' %></li>
+        <li><%= link_to "Rants  |", '/rant_stats', class: 'white-text' %></li>
+        <li><%= link_to "Users", '/user_stats', class: 'white-text' %></li>
       </div>
       <li><%= link_to "LOGOUT", signout_path, class: 'float-right white-text green-button', id: 'logout-button' %></li>
     </ul>
