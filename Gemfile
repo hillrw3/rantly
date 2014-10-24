@@ -42,6 +42,7 @@ gem 'aws-sdk'
 gem 'keen'
 gem 'dotenv-rails'
 gem 'fog'
+gem 'figaro'
 
 group :production   do
   gem 'rails_12factor'
