@@ -31,8 +31,8 @@
 
 <% if @other_rants != nil %>
 
-  <% @other_rants.each do |rant| %>
-    <div class="my-rants">
+  <div class="my-rants">
+    <% @other_rants.each do |rant| %>
       <div class="one-rant">
         <div class="user-info">
           <ul>
@@ -51,9 +51,9 @@
         </div>
         <hr width="60%">
       </div>
-    </div>
 
-  <% end %>
+    <% end %>
+  </div>
 
 <% end %>
 
@@ -63,8 +63,8 @@
 
 <% if @my_rants != nil %>
 
-  <% @my_rants.each do |rant| %>
-    <div class="my-rants">
+  <div class="my-rants">
+    <% @my_rants.each do |rant| %>
       <div class="user-info">
         <ul>
           <li><%= link_to rant.user.username, user_path(id: rant.user.id), class: "link-no-dec" %></li>
@@ -75,12 +75,13 @@
       </div>
       <div class="rant">
         <h4 class="centered-text"><%= rant.subject %></h4>
+
         <p><%= link_to rant.truncated_rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
         <%= link_to "Delete", rant_path(id: rant.id), method: :delete, class: 'float-right' %>
       </div>
       <hr width="60%">
-    </div>
 
-  <% end %>
+    <% end %>
+  </div>
 
 <% end %>

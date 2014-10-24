@@ -8,7 +8,7 @@ $green: #38761d;
 * {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   box-sizing: border-box;
-  background: gray;
+  background: white;
 }
 
 body {
@@ -76,6 +76,10 @@ h1 {
   width: 25vw;
   height: 100vh;
   float: left;
+  background: gray;
+  position: fixed;
+
+  * { background: gray; }
 
   input[type=text], textarea {
     background: white;
@@ -106,6 +110,8 @@ h1 {
 .green-button {
   background-color: $green;
   font-size: 1em;
+
+  &:hover { color: white; }
 }
 
 .big-button {
