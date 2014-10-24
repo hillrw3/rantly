@@ -1,6 +1,7 @@
 /*
  *= require_tree .
  *= require_self
+ *= require jquery.fileupload-ui
  */
 
 $green: #38761d;
@@ -167,8 +168,8 @@ nav {
 
 .errors {
   height: 50px;
-  color: white;
-  background-color: red;
+  color: red;
+  text-align: center;
 }
 
 .user-link {
