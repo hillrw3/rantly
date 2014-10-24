@@ -50,6 +50,7 @@ gem 'pg'
 gem 'launchy'
 gem 'carrierwave'
 gem 'aws-sdk'
+gem 'keen'
 
 group :production do
   gem 'rails_12factor'

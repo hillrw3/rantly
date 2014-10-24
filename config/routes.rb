@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root "rants#splash"
 
   get 'signout' => 'sessions#destroy', as: :signout
-  get '/user_stats' => 'admins#users'
-  get '/rant_stats' => 'admins#rants'
+  get '/admins/users' => 'admins#users'
+  get '/admins/rants' => 'admins#rants'
 
   resources :rants
   resources :sessions
