@@ -78,6 +78,7 @@ h1 {
 .quarterwidth {
   width: 25vw;
   height: 100vh;
+  margin-top: 8vh;
   float: left;
   background: gray;
   position: fixed;
@@ -125,10 +126,13 @@ h1 {
 
 nav {
   height: 8vh;
+  width: 100%;
   min-height: 55px;
   background: #333333;
   vertical-align: middle;
   margin-top: 0;
+  position: fixed;
+  top: 0;
 
   * {
     background: #333333;
