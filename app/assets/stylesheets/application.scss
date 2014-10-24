@@ -26,7 +26,7 @@ h1 {
 }
 
 .half-height {
-  height: 45vh;
+  height: 40vh;
   width: 100%;
   background: white;
 
@@ -40,9 +40,12 @@ h1 {
 }
 
 .half-height-gray {
-  height: 45vh;
+  height: 50vh;
   width: 100%;
   background: gray;
+  padding-top: 5%;
+
+  * { background: gray; }
 }
 
 .user-pic {
