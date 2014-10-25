@@ -1,0 +1,18 @@
+<div class="one-rant">
+  <div class="user-info">
+    <ul>
+      <li><%= link_to rant.user.username, user_path(rant.user), class: "link-no-dec" %></li>
+      <li>
+        <%= image_tag(rant.user.avatar.url, class: "user-pic") %>
+      </li>
+      <li><%= follow_link(rant) %></li>
+    </ul>
+  </div>
+  <div class="rant">
+    <h4 class="centered-text"><%= rant.subject %></h4>
+
+    <p><%= link_to rant.truncated_rant, rant_path(id: rant.id), class: "link-no-dec" %></p>
+    <%= favorite_link(rant) %>
+  </div>
+  <hr width="60%">
+</div>
