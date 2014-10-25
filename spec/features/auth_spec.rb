@@ -64,14 +64,15 @@ feature 'User creation and login' do
 
   scenario "user sees error if incorrect login info is provided" do
     visit '/'
-    click_on "Join"
+    click_button "Join"
     expect(page).to have_content("Register")
     fill_in "Username", with: "Rob"
     fill_in "Password", with: "password"
     fill_in "First name", with: "Rob"
-    fill_in "First name", with: "Rob"
     fill_in "Last name", with: "Hill"
+    fill_in "Email", with: "rob@example.com"
     fill_in "Bio", with: "Just a simple fellow who likes to Rant"
+    attach_file("Avatar", "/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG")
     click_on "REGISTER"
     expect(page).to have_content "Thanks for registering.  Get to ranting!"
 

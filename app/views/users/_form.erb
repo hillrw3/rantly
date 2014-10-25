@@ -7,7 +7,7 @@
   <p></p>
 <% end %>
 
-<%= form_for @user, html: {class: 'form direct-upload'} do |f| %>
+<%= form_for @user, html: {class: 'form'} do |f| %>
 
   <div class="left-section">
     <%= f.label :username %>
@@ -44,7 +44,7 @@
   <%= f.radio_button :rant_frequency, 'Monthly' %>
   <%= f.label :rant_frequency_monthly, 'Monthly' %>
   <br/><br/>
-  <%= f.label :avatar, "Upload a Profile Picture" %>
+  <%= f.label :avatar, "Avatar" %>
   <%= f.file_field :avatar %>
   <br/><br/>
   <hr/>
