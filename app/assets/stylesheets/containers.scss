@@ -1,0 +1,68 @@
+$green: #38761d;
+
+.half-height {
+  height: 40vh;
+  width: 100%;
+  margin-top: 8vh;
+  background: white;
+
+  h1 {
+    padding-top: 3vh;
+  }
+
+  * {
+    background: white;
+  }
+}
+
+.half-height-gray {
+  height: 55vh;
+  width: 100%;
+  background: gray;
+  padding-top: 5%;
+
+  * { background: gray; }
+}
+
+.sixtywidth {
+  width: 60%;
+  margin: auto;
+  margin-top: 8vh;
+
+  div {
+    display: inline;
+
+    img {
+      float: left;
+      margin: 0 20px 0 0;
+    }
+  }
+}
+
+.quarterwidth {
+  width: 25vw;
+  height: 100vh;
+  margin-top: 8vh;
+  float: left;
+  background: gray;
+  position: fixed;
+
+  * { background: gray; }
+
+  input[type=text], textarea {
+    background: white;
+    color: black;
+    width: 20vw;
+  }
+
+  textarea {
+    height: 40vh;
+  }
+}
+
+.three-quarter-width {
+  width: 74vw;
+  height: 100%;
+  margin-top: 8vh;
+  padding-bottom: 10vh;
+}

@@ -1,0 +1,64 @@
+$green: #38761d;
+
+#home-button {
+  margin-top: 3vh;
+}
+
+#logout-button {
+  margin-top: -3vh;
+  margin-right: 1vw;
+  padding: 1vh 3vw 1vh 3vw;
+
+  &:hover { border: 1px solid white; }
+}
+
+#login-button {
+  margin-right: 1vw;
+  margin-top: 1vh;
+}
+
+#join-button {
+  margin-right: 1vw;
+  padding: 1vh 3vw 1vh 3vw;
+}
+
+.nav-buttons {
+  padding-top: 2vh;
+}
+
+nav {
+  height: 8vh;
+  width: 100%;
+  min-height: 55px;
+  background: #333333;
+  vertical-align: middle;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+
+  * {
+    background: #333333;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+
+    * {
+      vertical-align: middle;
+    }
+
+    li {
+      display: inline;
+
+      a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+  }
+}

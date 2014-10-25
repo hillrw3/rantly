@@ -1,0 +1,45 @@
+$green: #38761d;
+
+
+.form {
+  padding: 3vh;
+  margin-bottom: 10%;
+  border: 1px solid black;
+
+  input {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  input[type=submit] {
+    margin: 0 auto;
+    background-color: $green;
+    display: block;
+    width: 100%;
+    color: white;
+    height: 10vh;
+  }
+  input[type=radio] {
+    width: auto;
+    margin-left: 15%;
+  }
+
+  .left-section {
+    width: 45%;
+    margin-right: 8%;
+    display: inline-block;
+    position: relative;
+  }
+
+  .right-section {
+    width: 45%;
+    display: inline-block;
+    position: relative;
+  }
+
+}

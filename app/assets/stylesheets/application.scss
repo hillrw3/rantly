@@ -25,82 +25,8 @@ h1 {
   margin: 0;
 }
 
-.half-height {
-  height: 40vh;
-  width: 100%;
-  background: white;
-
-  h1 {
-    padding-top: 3vh;
-  }
-
-  * {
-    background: white;
-  }
-}
-
-.half-height-gray {
-  height: 50vh;
-  width: 100%;
-  background: gray;
-  padding-top: 5%;
-
-  * { background: gray; }
-}
-
-.user-pic {
-  height: auto;
-  width: auto;
-  margin: auto;
-  max-width: 150px;
-  margin-top: 3vh;
-}
-
 .white-text {
   color: white;
-}
-
-.sixtywidth {
-  width: 60%;
-  margin: auto;
-  margin-top: 5vh;
-
-  div {
-    display: inline;
-
-    img {
-      float: left;
-      margin: 0 20px 0 0;
-    }
-  }
-}
-
-.quarterwidth {
-  width: 25vw;
-  height: 100vh;
-  margin-top: 8vh;
-  float: left;
-  background: gray;
-  position: fixed;
-
-  * { background: gray; }
-
-  input[type=text], textarea {
-    background: white;
-    color: black;
-    width: 20vw;
-  }
-
-  textarea {
-    height: 40vh;
-  }
-}
-
-.three-quarter-width {
-  width: 74vw;
-  height: 100%;
-  margin-top: 8vh;
-  padding-bottom: 10vh;
 }
 
 .float-left {
@@ -123,43 +49,6 @@ h1 {
   width: 20vw;
   height: 6vh;
   font-size: 1.5em;
-}
-
-nav {
-  height: 8vh;
-  width: 100%;
-  min-height: 55px;
-  background: #333333;
-  vertical-align: middle;
-  margin-top: 0;
-  position: fixed;
-  top: 0;
-
-  * {
-    background: #333333;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-
-    * {
-      vertical-align: middle;
-    }
-
-    li {
-      display: inline;
-
-      a {
-        text-decoration: none;
-        color: white;
-
-        &:hover {
-          color: $green;
-        }
-      }
-    }
-  }
 }
 
 .white-box * {
@@ -203,36 +92,6 @@ nav {
   }
 }
 
-.user-info {
-  display: inline-block;
-  text-align: center;
-  max-width: 29%;
-  vertical-align: top;
-  margin-top: 15px;
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-}
-
-.my-rants {
-  width: 90%;
-  margin: auto;
-  text-align: left;
-  display: block;
-  .one-rant {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-  }
-  .rant {
-    display: inline-block;
-    height: 100%;
-    width: 70%;
-    margin-left: 1%;
-  }
-}
-
 .following {
   width: 30%;
   display: inline-block;
@@ -245,73 +104,6 @@ nav {
   &:hover {
     color: $green;
   }
-}
-
-#home-button {
-  margin-top: 3vh;
-}
-
-#logout-button {
-  margin-top: -3vh;
-  margin-right: 1vw;
-  padding: 1vh 3vw 1vh 3vw;
-}
-
-#login-button {
-  margin-right: 1vw;
-  margin-top: 1vh;
-}
-
-#join-button {
-  margin-right: 1vw;
-  padding: 1vh 3vw 1vh 3vw;
-}
-
-.nav-buttons {
-  padding-top: 2vh;
-}
-
-.form {
-  padding: 3vh;
-  margin-bottom: 10%;
-  border: 1px solid black;
-
-  input {
-    width: 100%;
-    display: inline-block;
-    position: relative;
-  }
-
-  textarea {
-    width: 100%;
-  }
-
-  input[type=submit] {
-    margin: 0 auto;
-    background-color: $green;
-    display: block;
-    width: 100%;
-    color: white;
-    height: 10vh;
-  }
-  input[type=radio] {
-    width: auto;
-    margin-left: 15%;
-  }
-
-  .left-section {
-    width: 45%;
-    margin-right: 8%;
-    display: inline-block;
-    position: relative;
-  }
-
-  .right-section {
-    width: 45%;
-    display: inline-block;
-    position: relative;
-  }
-
 }
 
 .favorite-link {
@@ -340,25 +132,6 @@ nav {
   margin-right: 3vw;
 }
 
-.show-rant {
-  text-align: left;
-
-  p {
-    text-align: left;
-    margin-left: 3%;
-  }
-}
-
-.user-pic-show {
-  width: 17vw;
-  margin-right: 2%;
-}
-
-.user-pic-small {
-  width: 10vw;
-  max-width: 100px;
-}
-
 .comment-form {
 
   textarea {
@@ -379,27 +152,4 @@ nav {
 .top-padding {
   padding-top: 20px;
   margin: 0;
-}
-
-.users-table {
-  margin: 0 auto;
-  border: 1px solid black;
-  padding-top: 5vh;
-
-
-  tr:nth-child(odd) { background-color: lightgray }
-
-  td {
-    border-left: 1px solid black;
-    text-align: left;
-    padding-right: 10px;
-    padding-left: 5px;
-  }
-
-  th {
-    border: 1px solid black;
-    text-align: left;
-    padding-right: 10px;
-    padding-left: 5px;
-  }
 }

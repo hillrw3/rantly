@@ -1,0 +1,24 @@
+$green: #38761d;
+
+.users-table {
+  margin: 0 auto;
+  border: 1px solid black;
+  padding-top: 5vh;
+
+
+  tr:nth-child(odd) { background-color: lightgray }
+
+  td {
+    border-left: 1px solid black;
+    text-align: left;
+    padding-right: 10px;
+    padding-left: 5px;
+  }
+
+  th {
+    border: 1px solid black;
+    text-align: left;
+    padding-right: 10px;
+    padding-left: 5px;
+  }
+}
