@@ -20,6 +20,30 @@ def sign_in
   expect(page).to have_content "ROB HILL"
 end
 
+def login
+  visit '/'
+  click_on 'Login'
+  fill_in 'Username', with: 'Rob'
+  fill_in 'Password', with: 'password'
+  click_button 'Login'
+end
+
+def login_admin
+  visit '/'
+  click_on 'Login'
+  fill_in 'Username', with: 'admin'
+  fill_in 'Password', with: 'password'
+  within('.form') do
+    click_on 'Login'
+  end
+end
+
+
+def create_user_with_rant
+  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant")
+  user.rants.create!(subject: "something fun", rant: "Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci")
+end
+
 def create_user
   user = User.create!(username: "Rob",
                       password: "password",
@@ -30,20 +54,10 @@ def create_user
                       avatar: "hello.png")
 end
 
-def login
-  visit '/'
-  click_on 'Login'
-  fill_in 'Username', with: 'Rob'
-  fill_in 'Password', with: 'password'
-  click_on 'Login'
-end
-
-
-def create_user_with_rant
-  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant")
-  user.rants.create!(subject: "something fun", rant: "Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci")
-end
-
 def create_user2
   User.create!(username: "Puff", password: "password", first_name: "Puff", last_name: "theDog", bio: "I am a DOG who enjoys a good rant")
+end
+
+def create_admin
+  User.create!(username: "admin", password: "password", first_name: "admin", last_name: "admin", bio: "Dont mind me.  I'm just administrating", admin: true)
 end
