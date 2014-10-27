@@ -1,11 +1,11 @@
 <div class="centered-text white-background">
-  <br/>
-  <h2>Users</h2>
+  <h1>Users</h1>
   <table class="users-table">
     <thead>
     <tr>
       <th>Name</th>
       <th>Username</th>
+      <th>Email</th>
       <th>Number of Rants</th>
       <th>Disabled</th>
       <th>Actions</th>
@@ -16,9 +16,10 @@
       <tr>
         <td><%= "#{user.first_name} #{user.last_name}" %></td>
         <td><%= user.username %></td>
+        <td><%= user.email %></td>
         <td><%= user.rants.count %></td>
         <td>
-          <% '✓' unless user.enabled %></td>
+          <%= '✓' unless user.enabled %></td>
         <td>Need to add :(</td>
       </tr>
     <% end %>

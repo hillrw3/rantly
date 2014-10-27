@@ -40,7 +40,7 @@ end
 
 
 def create_user_with_rant
-  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant")
+  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant", email: "jim@example.com")
   user.rants.create!(subject: "something fun", rant: "Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci")
 end
 
@@ -55,7 +55,11 @@ def create_user
 end
 
 def create_user2
-  User.create!(username: "Puff", password: "password", first_name: "Puff", last_name: "theDog", bio: "I am a DOG who enjoys a good rant")
+  User.create!(username: "Puff", password: "password", first_name: "Puff", last_name: "theDog", bio: "I am a DOG who enjoys a good rant", email: "puff@example.com")
+end
+
+def create_disabled_user
+  User.create!(username: "Puff", password: "password", first_name: "Puff", last_name: "theDog", bio: "I am a DOG who enjoys a good rant", email: "puff@example.com", enabled: false)
 end
 
 def create_admin

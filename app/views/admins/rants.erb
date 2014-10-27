@@ -1,0 +1,28 @@
+<div class="centered-text white-background">
+  <h1>rants</h1>
+  <div class="rant-options">
+    <p>Rant filtering options go here. </p>
+  </div>
+  <table class="users-table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @rants.each do |rant| %>
+      <tr>
+        <td><%= "#{rant.user.first_name} #{rant.user.last_name}" %></td>
+        <td><%= rant.user.username %></td>
+        <td><%= rant.user.email %></td>
+        <td><%= rant.subject %></td>
+        <td><%= link_to "View", rant_path(rant) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
