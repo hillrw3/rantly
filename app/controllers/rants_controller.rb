@@ -30,7 +30,7 @@ class RantsController < ApplicationController
     @rant.update(user_id: session[:user_id])
 
     if @rant.save
-      Keen.publish(:rants, {user_id: @rant.user_id, date: @rant.created_at})
+      Keen.publish(:rants, {user_id: @rant.user_id, date: @rant.created_at}) if Rails.env.production?
       flash[:notice] = "Feel better? Rant posted."
       redirect_to rants_path
     else

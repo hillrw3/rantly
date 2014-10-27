@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      Keen.publish(:logins, {username: @user.username, date: Time.now})
+      Keen.publish(:logins, {username: @user.username, date: Time.now}) if Rails.env.production?
       if current_user.admin
         redirect_to admins_path
       else

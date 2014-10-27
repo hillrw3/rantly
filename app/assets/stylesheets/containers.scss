@@ -66,3 +66,13 @@ $green: #38761d;
   margin-top: 8vh;
   padding-bottom: 10vh;
 }
+
+.charts-container {
+  width: 100%;
+  display: inline-block;
+
+  .chart {
+    display: inline-block;
+    width: 30%;
+  }
+}
