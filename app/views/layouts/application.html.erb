@@ -47,19 +47,6 @@
   </nav>
 <% end %>
 
-
-<% if flash[:notice] %>
-  <div class='green-box flash'>
-    <%= flash[:notice] %>
-  </div>
-<% end %>
-
-<% if flash[:error] %>
-  <div class="errors flash centered-text">
-    <%= flash[:error] %>
-  </div>
-<% end %>
-
 <body>
 <% if current_user && current_user.admin == false %>
   <div class="container">
@@ -97,10 +84,12 @@
     </div>
 
     <div class="three-quarter-width white-background float-right centered-text">
+      <%= render partial: "layouts/flash" %>
       <%= yield %>
     </div>
 
 <% else %>
+  <%= render partial: "layouts/flash" %>
   <%= yield %>
 <% end %>
 

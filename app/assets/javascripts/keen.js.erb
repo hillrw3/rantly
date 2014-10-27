@@ -5,6 +5,7 @@ $(document).on('ready', function () {
     readKey: "<%= ENV['KEEN_READ_KEY'] %>"
   });
   Keen.ready(function () {
+
     var sign_ups = new Keen.Query("count", {
       eventCollection: "sign_ups",
       timeframe: "this_4_days",

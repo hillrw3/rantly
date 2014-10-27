@@ -7,17 +7,22 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(user_params)
 
-    if @user && @user.authenticate(params[:user][:password])
-      session[:user_id] = @user.id
-      Keen.publish(:logins, {username: @user.username, date: Time.now}) if Rails.env.production?
-      if current_user.admin
-        redirect_to admins_path
+    if @user.present? && @user.authenticate(params[:user][:password])
+      unless @user.enabled
+        flash[:error] = "Your account has been disabled"
+        render :new
       else
-        redirect_to rants_path
+        session[:user_id] = @user.id
+        Keen.publish(:logins, {username: @user.username, date: Time.now}) if Rails.env.production?
+        if current_user.admin
+          redirect_to admins_path
+        else
+          redirect_to rants_path
+        end
       end
     else
       flash[:error] = "Login failed"
-      render :new
+      redirect_to new_session_path
     end
   end
 

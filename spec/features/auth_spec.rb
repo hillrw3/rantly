@@ -84,4 +84,14 @@ feature 'User creation and login' do
     expect(page).to have_content "Login failed"
   end
 
+  scenario "user sees flash message & cannot login if disabled" do
+    create_disabled_user
+    visit '/'
+    click_link "Login"
+    expect(page).to have_content "Login"
+    fill_in "Username", with: "Puff"
+    fill_in "Password", with: "password"
+    click_button "Login"
+  end
+
 end
