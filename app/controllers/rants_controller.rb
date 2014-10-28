@@ -17,7 +17,7 @@ class RantsController < ApplicationController
   def index
     @my_rants = current_user.rants
     @mentioned_rants = Rant.where_user_mentioned(current_user)
-    @other_rants = Rant.where.not(user_id: current_user.id)
+    @other_rants = Rant.all_except_spam_and_current_user(current_user)
   end
 
   def show

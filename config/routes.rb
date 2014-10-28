@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/admins/users' => 'admins#users'
   get '/admins/rants' => 'admins#rants'
   get 'disable/:id' => 'admins#disable', as: :disable
+  post 'spam/:id' => 'spam#create', as: :spam
 
   resources :rants
   resources :sessions

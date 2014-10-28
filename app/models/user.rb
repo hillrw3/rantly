@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :rants
   has_many :favorited_rants
   has_many :comments, class_name:  "Comment", foreign_key: :commenter_id
+  has_many :spams, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
   # validates :avatar, presence: true, unless: :admin
