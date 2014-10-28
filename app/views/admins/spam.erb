@@ -1,0 +1,34 @@
+<div class="centered-text white-background">
+  <h1>Rants</h1>
+  <div class="rant-options">
+    <%= link_to "All", admins_rants_path %>
+    <%= link_to "Spam", admins_spam_path %>
+  </div>
+  <br/>
+  <table class="users-table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @rants.each do |rant| %>
+      <tr>
+        <td><%= "#{rant.user.first_name} #{rant.user.last_name}" %></td>
+        <td><%= rant.user.username %></td>
+        <td><%= rant.user.email %></td>
+        <td><%= rant.subject %></td>
+        <td>
+          <%= link_to "View", rant_path(rant) %>
+          <%= link_to "Not Spam", not_spam_path(rant), method: :delete %>
+          <%= link_to "Delete", rant_path(rant), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

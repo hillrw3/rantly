@@ -41,11 +41,13 @@ class RantsController < ApplicationController
 
   def destroy
     @rant = Rant.find(params[:id])
-    if @rant.user.id == session[:user_id]
-      @rant.destroy
-      flash[:notice] = "Your rant was deleted."
+    @rant.destroy if @rant.user.id == session[:user_id] || current_user.admin
+    flash[:notice] = "Your rant was deleted."
+    if current_user.admin
+      redirect_to :back
+    else
+      redirect_to rants_path
     end
-    redirect_to rants_path
   end
 
   private

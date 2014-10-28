@@ -11,7 +11,6 @@ class AdminsController < ApplicationController
 
   def spam
     @rants = Rant.spam
-    render :rants
   end
 
   def users

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/admins/spam' => 'admins#spam'
   get 'disable/:id' => 'admins#disable', as: :disable
   post 'spam/:id' => 'spam#create', as: :spam
+  delete 'spam/:id' => 'spam#destroy', as: :not_spam
 
   resources :rants
   resources :sessions

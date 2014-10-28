@@ -6,4 +6,9 @@ class SpamController < ApplicationController
     redirect_to rants_path
   end
 
+  def destroy
+    Spam.find_by(rant_id: params[:id]).destroy
+    redirect_to :back
+  end
+
 end
