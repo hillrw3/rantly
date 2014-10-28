@@ -11,6 +11,7 @@
       <th>Name</th>
       <th>Username</th>
       <th>Email</th>
+      <th>Times Marked as Spam</th>
       <th>Title</th>
       <th>Actions</th>
     </tr>
@@ -21,6 +22,7 @@
         <td><%= "#{rant.user.first_name} #{rant.user.last_name}" %></td>
         <td><%= rant.user.username %></td>
         <td><%= rant.user.email %></td>
+        <td><%= rant.spams.count %></td>
         <td><%= rant.subject %></td>
         <td>
           <%= link_to "View", rant_path(rant) %>
