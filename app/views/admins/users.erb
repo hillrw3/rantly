@@ -20,7 +20,13 @@
         <td><%= user.rants.count %></td>
         <td>
           <%= '✓' unless user.enabled %></td>
-        <td>Need to add :(</td>
+        <td>
+          <% if user.enabled %>
+            <%= link_to "Disable", disable_path(user) %>
+          <% else %>
+            <%= link_to "Enable", disable_path(user) %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
     </tbody>

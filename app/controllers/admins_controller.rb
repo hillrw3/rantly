@@ -10,7 +10,18 @@ class AdminsController < ApplicationController
   end
 
   def users
-    @users = User.all
+    @users = User.where(admin: false).order(:username)
+  end
+
+  def disable
+    @user = User.find(params[:id])
+    if @user.enabled
+      @user.update_attributes(enabled: false)
+      redirect_to :back
+    else
+      @user.update_attributes(enabled: true)
+      redirect_to :back
+    end
   end
 
   private

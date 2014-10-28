@@ -23,4 +23,14 @@ feature "Admin Users" do
     expect(page).to have_content "Puff"
   end
 
+  scenario "Admin can disable a user" do
+    create_admin
+    create_user
+    login_admin
+    click_on "Users"
+    expect(page).to have_no_content "✓"
+    click_on "Disable"
+    expect(page).to have_content "✓"
+  end
+
 end
