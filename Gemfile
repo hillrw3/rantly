@@ -30,6 +30,8 @@ group :development, :test do
   gem 'capybara'
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner', '1.3.0'
 end
 
 # Use ActiveModel has_secure_password

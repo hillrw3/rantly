@@ -9,6 +9,11 @@ class AdminsController < ApplicationController
     @rants = Rant.order('created_at DESC')
   end
 
+  def spam
+    @rants = Rant.spam
+    render :rants
+  end
+
   def users
     @users = User.where(admin: false).order(:username)
   end

@@ -39,4 +39,9 @@ class Rant < ActiveRecord::Base
     nonspam_rants
   end
 
+  def self.spam
+    spam_rant_ids = Spam.all.map {|spam| spam.rant_id }
+    Rant.where(id: spam_rant_ids.each {|id| id})
+  end
+
 end

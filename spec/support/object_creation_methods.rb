@@ -40,12 +40,12 @@ end
 
 
 def create_user_with_rant
-  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant", email: "jim@example.com")
+  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant", email: "jim@example.com", avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
   user.rants.create!(subject: "something fun", rant: "Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci")
 end
 
 def create_user_with_markdown_rant
-  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant", email: "jim@example.com")
+  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant", email: "jim@example.com", avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
   user.rants.create!(subject: "something fun", rant: "*Lorem* ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci")
 end
 
@@ -56,15 +56,15 @@ def create_user
                       last_name: "Hill",
                       bio: "Just a simple fellow who likes to Rant",
                       email: "rob@example.com",
-                      avatar: "hello.png")
+                      avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
 end
 
 def create_user2
-  User.create!(username: "Puff", password: "password", first_name: "Puff", last_name: "theDog", bio: "I am a DOG who enjoys a good rant", email: "puff@example.com")
+  User.create!(username: "Puff", password: "password", first_name: "Puff", last_name: "theDog", bio: "I am a DOG who enjoys a good rant", email: "puff@example.com", avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
 end
 
 def create_disabled_user
-  User.create!(username: "Puff", password: "password", first_name: "Puff", last_name: "theDog", bio: "I am a DOG who enjoys a good rant", email: "puff@example.com", enabled: false)
+  User.create!(username: "Puff", password: "password", first_name: "Puff", last_name: "theDog", bio: "I am a DOG who enjoys a good rant", email: "puff@example.com", enabled: false, avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
 end
 
 def create_admin

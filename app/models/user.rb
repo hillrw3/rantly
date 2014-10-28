@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :spams, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
-  # validates :avatar, presence: true, unless: :admin
+  validates :avatar, presence: true, unless: :admin
   validates :password, length: {minimum: 8}, on: :create
 
 
