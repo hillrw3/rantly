@@ -43,6 +43,7 @@ gem 'keen'
 gem 'dotenv-rails'
 gem 'fog'
 gem 'figaro'
+gem 'redcarpet'
 
 group :production   do
   gem 'rails_12factor'

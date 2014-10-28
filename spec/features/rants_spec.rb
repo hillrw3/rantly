@@ -91,4 +91,11 @@ feature "Rants" do
     expect(page).to have_content "Unfavorite"
   end
 
+  scenario "Markdown will be correctly rendered" do
+    create_user_with_markdown_rant
+    sign_in
+    expect(page).to have_no_content "*Lorem*"
+    expect(page).to have_content "Lorem"
+  end
+
 end

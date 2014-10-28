@@ -22,4 +22,10 @@ module ApplicationHelper
     @current_user ||= User.find(session[:user_id])
   end
 
+  def markdown(text)
+    renderer = Redcarpet::Render::HTML.new()
+    markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+    raw markdown.render(text)
+  end
+
 end

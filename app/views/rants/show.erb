@@ -10,7 +10,7 @@
   <a href="https://twitter.com/share" class="twitter-share-button float-right" data-text="<%= @rant.subject %>">Tweet</a>
   <br/>
 
-  <p><%= @rant.rant %></p>
+  <p><%= markdown(@rant.rant) %></p>
 </div>
 <br/>
 <hr width="60%"/>

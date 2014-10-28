@@ -44,6 +44,11 @@ def create_user_with_rant
   user.rants.create!(subject: "something fun", rant: "Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci")
 end
 
+def create_user_with_markdown_rant
+  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant", email: "jim@example.com")
+  user.rants.create!(subject: "something fun", rant: "*Lorem* ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci")
+end
+
 def create_user
   user = User.create!(username: "Rob",
                       password: "password",
