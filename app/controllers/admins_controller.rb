@@ -15,13 +15,7 @@ class AdminsController < ApplicationController
 
   def disable
     @user = User.find(params[:id])
-    if @user.enabled
-      @user.update_attributes(enabled: false)
-      redirect_to :back
-    else
-      @user.update_attributes(enabled: true)
-      redirect_to :back
-    end
+    disable_user(@user)
   end
 
   private
@@ -29,6 +23,16 @@ class AdminsController < ApplicationController
   def check_if_admin
     unless current_user.admin
       redirect_to "/"
+    end
+
+    def disable_user(user)
+      if user.enabled
+        user.update_attributes(enabled: false)
+        redirect_to :back
+      else
+        user.update_attributes(enabled: true)
+        redirect_to :back
+      end
     end
   end
 

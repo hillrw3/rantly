@@ -4,6 +4,8 @@
 <div class="show-rant">
   <%= image_tag(@rant.user.avatar.url, class: "user-pic-show float-left") %>
   <%= link_to "by #{@rant.user.username}", user_path(id: @rant.user.id), class: "link-no-dec" %>
+  <%#= link_to "Tweet", "https://twitter.com/share", class: "twitter-share-button tweet-link"  %>
+  <a href="https://twitter.com/share" class="twitter-share-button tweet-link" data-text="<%= @rant.subject %>">Tweet</a>
   <br/>
 
   <p><%= @rant.rant %></p>
