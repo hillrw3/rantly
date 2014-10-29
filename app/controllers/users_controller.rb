@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user.ip_id = IPAddress.find_by(ip: request.remote_ip).id
 
     if @user.save
+      UserMailer.registration_email(@user).deliver
       Keen.publish(:sign_ups, {username: @user.username, date: @user.created_at}) if Rails.env.production?
       flash[:notice] = "Thanks for registering.  Get to ranting!"
       redirect_to root_path
