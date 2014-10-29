@@ -33,4 +33,19 @@ feature "Admin Users" do
     expect(page).to have_content "✓"
   end
 
+  scenario "Admin can sorts users by number of rants" do
+    create_admin
+    create_user
+    create_user_with_rant
+    login_admin
+    click_on "Users"
+    within("tbody") do
+      expect(first("tr")).to have_content "Rob"
+    end
+    click_on "Number of Rants"
+    within("tbody") do
+      expect(first("tr")).to have_content "Jim"
+    end
+  end
+
 end

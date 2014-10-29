@@ -14,7 +14,11 @@ class AdminsController < ApplicationController
   end
 
   def users
-    @users = User.where(admin: false).order(:username)
+    if params[:sort]
+      @users = User.where(admin: false).sort_by { |user| user.rants.count }.reverse
+    else
+      @users = User.where(admin: false)
+    end
   end
 
   def disable
