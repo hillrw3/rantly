@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def confirmation_email(user)
     @user = user
-    @url = 'http://example.com/login'
+    Rails.env.production? ? @url = 'http://example.com/login' : @url = 'http://example.com/login'
     mail(to: @user.email, subject: "Welcome to Rantly!")
   end
 

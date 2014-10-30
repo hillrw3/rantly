@@ -10,8 +10,8 @@ def sign_in
   fill_in "Bio", with: "Just a simple fellow who likes to Rant"
   attach_file "Avatar", "/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"
   click_on "REGISTER"
-  expect(page).to have_content "Thanks for registering.  Get to ranting!"
-
+  expect(page).to have_content "Thanks for registering!  Please check your email for account verification."
+  User.last.update_attributes(enabled: true)
   click_link "Login"
   expect(page).to have_content "Login"
   fill_in "Username", with: "Rob"
@@ -40,12 +40,12 @@ end
 
 
 def create_user_with_rant
-  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant", email: "jim@example.com", avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
+  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", enabled: true, bio: "I am a person who enjoys a good rant", email: "jim@example.com", avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
   user.rants.create!(subject: "something fun", rant: "Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci")
 end
 
 def create_user_with_markdown_rant
-  user = User.create!(username: "Jim", password: "password", first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant", email: "jim@example.com", avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
+  user = User.create!(username: "Jim", password: "password", enabled: true, first_name: "Jim", last_name: "Jam", bio: "I am a person who enjoys a good rant", email: "jim@example.com", avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
   user.rants.create!(subject: "something fun", rant: "*Lorem* ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci Lorem ipsum dolor sit amet, iusto adipisci")
 end
 
@@ -56,11 +56,12 @@ def create_user
                       last_name: "Hill",
                       bio: "Just a simple fellow who likes to Rant",
                       email: "rob@example.com",
-                      avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
+                      avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"),
+                      enabled: true)
 end
 
 def create_user2
-  User.create!(username: "Puff", password: "password", first_name: "Puff", last_name: "theDog", bio: "I am a DOG who enjoys a good rant", email: "puff@example.com", avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
+  User.create!(username: "Puff", password: "password", enabled: true, first_name: "Puff", last_name: "theDog", bio: "I am a DOG who enjoys a good rant", email: "puff@example.com", avatar: File.open("/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG"))
 end
 
 def create_disabled_user
@@ -68,5 +69,5 @@ def create_disabled_user
 end
 
 def create_admin
-  User.create!(username: "admin", password: "password", first_name: "admin", last_name: "admin", bio: "Dont mind me.  I'm just administrating", admin: true)
+  User.create!(username: "admin", password: "password", enabled: true, first_name: "admin", last_name: "admin", bio: "Dont mind me.  I'm just administrating", admin: true)
 end

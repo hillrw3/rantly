@@ -22,7 +22,8 @@ feature "Users specs" do
     fill_in "Email", with: "shazam@shazam.com"
     attach_file "Avatar", "#{Rails.root}/public/uploads/user/avatar/16/gSchool-photo.JPG"
     click_on "REGISTER"
-    expect(page).to have_content "Thanks for registering.  Get to ranting!"
+    expect(page).to have_content "Thanks for registering!  Please check your email for account verification."
+    User.last.update_attributes(enabled: true)
 
     click_link "Login"
     expect(page).to have_content "Login"

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if @user.present? && @user.authenticate(params[:user][:password])
       unless @user.enabled
-        flash[:error] = "Your account has been disabled"
+        flash[:error] = "Your account has been disabled or has not been verified"
         render :new
       else
         session[:user_id] = @user.id
@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
       end
     else
       flash[:error] = "Login failed"
+      @user = User.new
       redirect_to new_session_path
     end
   end

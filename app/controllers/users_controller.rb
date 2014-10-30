@@ -7,11 +7,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.ip_id = IPAddress.find_by(ip: request.remote_ip).id
+    @user.token = SecureRandom.urlsafe_base64
 
     if @user.save
-      UserMailer.registration_email(@user).deliver
+      UserMailer.confirmation_email(@user).deliver unless Rails.env.test?
       Keen.publish(:sign_ups, {username: @user.username, date: @user.created_at}) if Rails.env.production?
-      flash[:notice] = "Thanks for registering.  Get to ranting!"
+      flash[:notice] = "Thanks for registering!  Please check your email for account verification."
       redirect_to root_path
     else
       render :new

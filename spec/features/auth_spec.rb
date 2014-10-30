@@ -54,7 +54,7 @@ feature 'User creation and login' do
     fill_in "Bio", with: "Just a simple fellow who likes to Rant"
     attach_file("Avatar", "/Users/Rob/gSchoolWork/rantly/public/uploads/user/avatar/16/gSchool-photo.JPG")
     click_on "REGISTER"
-    expect(page).to have_content "Thanks for registering.  Get to ranting!"
+    expect(page).to have_content "Thanks for registering!  Please check your email for account verification."
 
     click_link "Login"
     expect(page).to have_content "Login"

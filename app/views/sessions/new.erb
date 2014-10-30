@@ -1,7 +1,7 @@
 <div class="white-box sixtywidth">
   <br>
 
-  <%= form_for @user, url: sessions_path, html: {class: 'form'} do |f| %>
+  <%= form_for @user, url: sessions_path, method: :post, html: {class: 'form'} do |f| %>
     <h2>Login</h2>
     <br/>
     <%= f.label :username %>
