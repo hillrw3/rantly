@@ -2,7 +2,7 @@ class Rant < ActiveRecord::Base
 
   belongs_to :user
   has_many :favorited_rants, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
   has_many :spams, dependent: :destroy
 
 
@@ -15,6 +15,18 @@ class Rant < ActiveRecord::Base
 
   def rant_to_array
     self.rant.split(/ /)
+  end
+
+  def check_for_hashtag_and_truncate
+    rant_as_array = rant_to_array
+    rant_as_array.map do |word|
+      if word[0] == "#"
+        word = link_to word, "/search?search=#{word[1..-1]}"
+        word
+      end
+    end
+    rant_as_array.join(' ')
+    truncated_rant
   end
 
   def truncated_rant

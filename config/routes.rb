@@ -11,13 +11,16 @@ Rails.application.routes.draw do
   delete 'spam/:id' => 'spam#destroy', as: :not_spam
   get '/confirmations' => 'confirmations#show', as: :confirmation
 
-  resources :rants
+  resources :rants do
+    resources :comments, only: :create
+  end
   resources :sessions
-  resources :users
+  resources :users do
+    resources :comments, only: :create
+  end
   resources :followers
   resources :search, only: :index
   resources :favorited_rants
-  resources :comments, only: :create
   resource :admins, only: :show
 
 end

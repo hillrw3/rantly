@@ -1,4 +1,4 @@
 # Rantly
 
-Find the production app at http://secret-dusk-3140.herokuapp.com//
+Find the production app at http://mighty-peak-5299.herokuapp.com//
 
